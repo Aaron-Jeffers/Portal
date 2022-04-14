@@ -15,5 +15,6 @@ public class Throwable : EventHorizonTransition
         base.Transition(fromPortal, toPortal, pos, rot);
         rb.velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.velocity));
         rb.angularVelocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.angularVelocity));
+        rb.useGravity = !rb.useGravity;
     }
 }

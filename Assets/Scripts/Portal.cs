@@ -23,10 +23,10 @@ public class Portal : MonoBehaviour
 
     private void LateUpdate()
     {
-        HandleTransitions();
+        Transitions();
     }
 
-    void HandleTransitions()
+    void Transitions()
     {
         for (int i = 0; i < transitionObjects.Count; i++)
         {
@@ -55,21 +55,9 @@ public class Portal : MonoBehaviour
         }
     }
 
-    void GenerateViewTexture()
+    public void RenderPrep()
     {
-        if(viewTexture ==null || viewTexture.width != Screen.width || viewTexture.height != Screen.height)
-        {
-            if(viewTexture != null)
-            {
-                viewTexture.Release();
-            }
 
-            viewTexture = new RenderTexture(Screen.width, Screen.height, 0);
-
-            portalCamera.targetTexture = viewTexture;
-
-            endPortal.eventHorizon.material.SetTexture("_MainTex", viewTexture);
-        }
     }
 
     public void Render()
@@ -84,6 +72,27 @@ public class Portal : MonoBehaviour
         eventHorizon.enabled = true;
     }
 
+    public void RenderComplete()
+    {
+
+    }
+
+    void GenerateViewTexture()
+    {
+        if (viewTexture == null || viewTexture.width != Screen.width || viewTexture.height != Screen.height)
+        {
+            if (viewTexture != null)
+            {
+                viewTexture.Release();
+            }
+
+            viewTexture = new RenderTexture(Screen.width, Screen.height, 0);
+
+            portalCamera.targetTexture = viewTexture;
+
+            endPortal.eventHorizon.material.SetTexture("_MainTex", viewTexture);
+        }
+    }
     void OnObjectPassEventHorizon (EventHorizonTransition obj)
     {
         if(!transitionObjects.Contains(obj))

@@ -10,8 +10,8 @@ public class PlayerInteract : MonoBehaviour
     //Interactable Object Variables
     GameObject interactObj, highlightObj;
     public float throwForce;
-
     public float grabDistance;
+
     private void Start()
     {
         playerCam = GetComponentInChildren<Camera>();
@@ -58,7 +58,7 @@ public class PlayerInteract : MonoBehaviour
         {
             return;
         }
-
+        
         if(Raycast().collider.CompareTag("cube"))
         {
             highlightObj = Raycast().collider.gameObject;
@@ -94,7 +94,6 @@ public class PlayerInteract : MonoBehaviour
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        //rb.AddRelativeForce(throwForce * obj.transform.forward, ForceMode.Impulse);
         rb.AddForce(throwForce * playerCam.transform.forward);
     }
 }

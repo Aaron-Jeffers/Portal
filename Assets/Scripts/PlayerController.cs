@@ -22,6 +22,7 @@ public class PlayerController : EventHorizonTransition
     public LayerMask groundMask;
 
     [Header("Camera Variables")]
+    private Camera playerCam;
     public Transform cameraTransform;
     public float mouseSensitivity;
     float pitch;
@@ -31,6 +32,7 @@ public class PlayerController : EventHorizonTransition
 
     private void Start()
     {
+        playerCam = GetComponentInChildren<Camera>();
         sprintSpeed = walkSpeed * sprintMultiplier;
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,7 +59,7 @@ public class PlayerController : EventHorizonTransition
 
         Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;
       
-        rb.velocity = targetVelocity;       
+        rb.velocity = targetVelocity;
     }
 
     public void Rotate()
@@ -81,15 +83,9 @@ public class PlayerController : EventHorizonTransition
     public override void Transition(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
-        //Vector3 eulerRot = rot.eulerAngles;
-        //float delta = Mathf.DeltaAngle(smoothYaw, eulerRot.y);
-        //yaw += delta;
-        //smoothYaw += delta;
-        //transform.Rotate(Vector3.up * smoothYaw);
-        //transform.eulerAngles = Vector3.up * smoothYaw;
-        //velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
         Physics.SyncTransforms();
         isGrounded = true;
+        playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox();
     }
 
     private void OnCollisionEnter(Collision collision)
