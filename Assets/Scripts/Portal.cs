@@ -94,6 +94,8 @@ public class Portal : MonoBehaviour
         }
     }
 
+    
+
     private void OnTriggerEnter(Collider obj)
     {
         Debug.Log("TriggerEnter");

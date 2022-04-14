@@ -9,7 +9,7 @@ public class Scene : MonoBehaviour
     {
         if(Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
     }
 }

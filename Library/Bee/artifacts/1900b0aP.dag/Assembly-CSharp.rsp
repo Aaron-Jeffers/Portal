@@ -277,8 +277,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.VRModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
--r:"C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal_Project/Portal/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
--r:"C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal_Project/Portal/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
+-r:"C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Core.ref.dll"
@@ -288,8 +288,10 @@
 "Assets/Scripts/EventHorizonTransition.cs"
 "Assets/Scripts/FirstPersonCamera.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PlayerInteract.cs"
 "Assets/Scripts/Portal.cs"
 "Assets/Scripts/Scene.cs"
+"Assets/Scripts/Throwable.cs"
 -langversion:8.0
 
 /deterministic

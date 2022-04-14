@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerController : EventHorizonTransition
 {
-    private CharacterController controller;
+    public Rigidbody rb;
 
     [Header("Movement Variables")]
     public float walkSpeed;
-    public float sprintSpeed;
-    public float strafeMultiplier;   
+    public float sprintMultiplier;
+    private float sprintSpeed;
+    public float strafeMultiplier;
     public float gravity;
-    public float jumpHeight;
+    private Vector3 smoothVelocity;
+    public Vector3 xVelocity, yVelocity, zVelocity;
 
-    public Vector3 smoothVelocity;
+    [Header("Jump Variables")]
+    public bool isGrounded;
     public Vector3 jumpForce;
-    private Vector3 gravityVel;
-
-    public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundMask;
 
@@ -31,14 +31,14 @@ public class PlayerController : EventHorizonTransition
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        sprintSpeed = walkSpeed * sprintMultiplier;
+        rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
         Movement();
-        Jump();
         Rotate();
     }
 
@@ -46,24 +46,18 @@ public class PlayerController : EventHorizonTransition
     {
         float forwardSpeed = (Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed;
 
-        Vector3 forwardMovement = Input.GetAxisRaw("Vertical") * transform.forward * forwardSpeed;
-        Vector3 sideMovement = Input.GetAxisRaw("Horizontal") * transform.right * walkSpeed * strafeMultiplier;
+        zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
+        xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
+        yVelocity -= gravity * transform.up * Time.deltaTime;
 
-        gravityVel += gravity * transform.up * Time.deltaTime;
-
-        if (controller.isGrounded)
+        if (isGrounded)
         {
-            gravityVel = 0 * transform.up;
+            yVelocity = Vector3.zero;
         }
 
-        if (controller.isGrounded && Input.GetButtonDown("Jump"))
-        {
-            gravityVel = Mathf.Sqrt(jumpHeight * gravity * -2f) * transform.up;
-        }
-
-        Vector3 targetVelocity = forwardMovement + sideMovement + gravityVel;
-
-        controller.Move(targetVelocity * Time.deltaTime);
+        Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;
+      
+        rb.velocity = targetVelocity;       
     }
 
     public void Rotate()
@@ -75,16 +69,13 @@ public class PlayerController : EventHorizonTransition
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, pitchMin, pitchMax);
 
-        smoothPitch = Mathf.SmoothDampAngle(smoothPitch, pitch, ref pitchSmoothRef, smoothTimeRot);
-        smoothYaw = Mathf.SmoothDampAngle(smoothYaw, mouseX, ref yawSmoothRef, smoothTimeRot);
+        yaw = mouseX;
 
-        cameraTransform.localRotation = Quaternion.Euler(smoothPitch, 0f, 0f);
-        transform.Rotate(Vector3.up * smoothYaw);
-    }
+        //smoothPitch = Mathf.SmoothDampAngle(smoothPitch, pitch, ref pitchSmoothRef, smoothTimeRot);
+        //smoothYaw = Mathf.SmoothDampAngle(smoothYaw, mouseX, ref yawSmoothRef, smoothTimeRot);
 
-    public void Jump()
-    {
-
+        cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        transform.Rotate(Vector3.up * yaw);
     }
 
     public override void Transition(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
@@ -98,5 +89,38 @@ public class PlayerController : EventHorizonTransition
         //transform.eulerAngles = Vector3.up * smoothYaw;
         //velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
         Physics.SyncTransforms();
+        isGrounded = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isGrounded = true;
+        yVelocity = Vector3.zero;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        isGrounded = true;
+        yVelocity = Vector3.zero;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        isGrounded = true;
+        yVelocity = Vector3.zero;
     }
 }
