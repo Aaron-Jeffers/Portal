@@ -292,6 +292,7 @@
 "Assets/Scripts/Portal.cs"
 "Assets/Scripts/Scene.cs"
 "Assets/Scripts/Throwable.cs"
+"Assets/Scripts/UI.cs"
 -langversion:8.0
 
 /deterministic
