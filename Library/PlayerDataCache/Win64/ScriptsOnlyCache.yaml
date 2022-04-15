@@ -14,8 +14,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -38,9 +36,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 43
       Script: {instanceID: 0}
+    - Class: 45
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
@@ -53,8 +55,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1994}
     - Class: 114
-      Script: {instanceID: 2458}
-    - Class: 114
       Script: {instanceID: 2654}
     - Class: 114
       Script: {instanceID: 3736}
@@ -66,8 +66,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4982}
     - Class: 114
       Script: {instanceID: 5266}
-    - Class: 114
-      Script: {instanceID: 5714}
     - Class: 114
       Script: {instanceID: 6664}
     - Class: 114
@@ -147,7 +145,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 67fe5fdb96c4ffcf4d7e38a09a044cdc
+      Hash: 9b2da23992702131fd53ae0a8161eff4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -813,7 +811,7 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: daef6a738b4e2e2b9ec37dbe75717ed3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FirstPersonCamera
@@ -904,4 +902,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0.2/Portal.exe
+  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0.3/Portal.exe

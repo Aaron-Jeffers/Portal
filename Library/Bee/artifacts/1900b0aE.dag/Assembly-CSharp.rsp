@@ -325,7 +325,6 @@
 "Assets/Scripts/PlayerInteract.cs"
 "Assets/Scripts/Portal.cs"
 "Assets/Scripts/Scene.cs"
-"Assets/Scripts/Terrain2obj.cs"
 "Assets/Scripts/Throwable.cs"
 -langversion:8.0
 
