@@ -8,7 +8,6 @@ public class EventHorizonTransition : MonoBehaviour
 
     public virtual void Transition (Transform beginningPortal, Transform endPortal, Vector3 pos, Quaternion rot)
     {
-        Debug.Log("IsTransitionCalled");
         transform.position = pos;
         transform.rotation = rot;
     }

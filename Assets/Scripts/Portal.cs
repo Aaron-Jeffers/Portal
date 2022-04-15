@@ -40,7 +40,6 @@ public class Portal : MonoBehaviour
 
             if (eventHorizonExitParallel != eventHorizonEntranceParallel)
             {
-                Debug.Log("TransitionTest");
                 transitioningObject.Transition(transform, endPortal.transform, tranObjMatrix.GetColumn(3), tranObjMatrix.rotation);
 
                 endPortal.OnObjectPassEventHorizon(transitioningObject);
@@ -107,7 +106,6 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider obj)
     {
-        Debug.Log("TriggerEnter");
         var transitioningObject = obj.GetComponent<EventHorizonTransition>();
         if(transitioningObject)
         {
@@ -117,7 +115,6 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerExit(Collider obj)
     {
-        Debug.Log("TriggerExit");
         var transitioningObject = obj.GetComponent<EventHorizonTransition>();
         if(transitioningObject && transitionObjects.Contains(transitioningObject))
         {
