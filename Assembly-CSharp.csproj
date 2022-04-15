@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Scene.cs" />
     <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Throwable.cs" />
+    <Compile Include="Assets\Scripts\RockSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\PortalScratchy.shader" />

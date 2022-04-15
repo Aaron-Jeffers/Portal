@@ -9,6 +9,7 @@ TagManager:
   - earthBoundary
   - moonBoundary
   - portal
+  - rock
   layers:
   - Default
   - TransparentFX

@@ -30,7 +30,7 @@ public class PlayerInteract : MonoBehaviour
         {
             var obj = Raycast();
 
-            if (obj.collider.CompareTag("cube"))
+            if (obj.collider.CompareTag("rock"))
             {
                 interactObj = obj.collider.gameObject;
                 isGrabbing = true;
@@ -60,7 +60,7 @@ public class PlayerInteract : MonoBehaviour
             return;
         }
         
-        if(Raycast().collider.CompareTag("cube"))
+        if(Raycast().collider.CompareTag("rock"))
         {
             highlightObj = Raycast().collider.gameObject;
             highlightObj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
