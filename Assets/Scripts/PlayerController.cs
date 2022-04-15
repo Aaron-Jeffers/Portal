@@ -82,7 +82,6 @@ public class PlayerController : EventHorizonTransition
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            Debug.Log("Jump");
             rb.AddForce(Vector3.up * jumpForce);
         }
     }
