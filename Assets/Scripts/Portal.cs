@@ -62,6 +62,7 @@ public class Portal : MonoBehaviour
         var portalCamMatrix = transform.localToWorldMatrix * endPortal.transform.worldToLocalMatrix * firstPersonCamera.transform.localToWorldMatrix;
         portalCamera.transform.SetPositionAndRotation(portalCamMatrix.GetColumn(3), portalCamMatrix.rotation);
 
+        CameraObliqueProjectionMatrix();
         portalCamera.Render();
         eventHorizon.enabled = true;
     }
@@ -85,6 +86,28 @@ public class Portal : MonoBehaviour
             portalCamera.targetTexture = viewTexture;
 
             endPortal.eventHorizon.material.SetTexture("_MainTex", viewTexture);
+        }
+    }
+
+    void CameraObliqueProjectionMatrix()
+    {
+        float clippingOffset = 0.05f, clippingLimit = 0.2f;
+
+        Transform clippingPlane = transform;
+        int d = System.Math.Sign(Vector3.Dot(clippingPlane.forward, transform.position - portalCamera.transform.position));
+
+        Vector3 cameraNorm = portalCamera.worldToCameraMatrix.MultiplyVector(clippingPlane.forward) * d;
+        Vector3 cameraPos = portalCamera.worldToCameraMatrix.MultiplyPoint(clippingPlane.position);
+
+        float cameraDistance = -Vector3.Dot(cameraPos, cameraNorm) + clippingOffset;
+
+        if(Mathf.Abs(cameraDistance) > clippingLimit)
+        {
+            portalCamera.projectionMatrix = firstPersonCamera.CalculateObliqueMatrix(new Vector4(cameraNorm.x, cameraNorm.y, cameraNorm.z, cameraDistance));
+        }
+        else
+        {
+            portalCamera.projectionMatrix = firstPersonCamera.projectionMatrix;
         }
     }
 

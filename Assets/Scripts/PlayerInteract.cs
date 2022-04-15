@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     GameObject interactObj, highlightObj;
     public float throwForce;
     public float grabDistance;
+    public Vector3 grabbedObjectOffset;
 
     private void Start()
     {
@@ -78,7 +79,7 @@ public class PlayerInteract : MonoBehaviour
             return;
         }
 
-        obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 1.5f) + (playerCam.transform.right * 1f);
+        obj.transform.position = playerCam.transform.position + (playerCam.transform.right * grabbedObjectOffset.x) - (playerCam.transform.up * grabbedObjectOffset.y) + (playerCam.transform.forward * grabbedObjectOffset.z);
         obj.transform.rotation = playerCam.transform.rotation;
         obj.GetComponent<Rigidbody>().isKinematic = true;
         highlightObj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
