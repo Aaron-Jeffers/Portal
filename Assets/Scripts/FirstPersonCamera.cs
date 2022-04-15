@@ -21,10 +21,6 @@ public class FirstPersonCamera : MonoBehaviour
     {
         foreach (var portal in portals)
         {
-            portal.RenderPrep();
-        }
-        foreach (var portal in portals)
-        {
             portal.Render();
         }
         foreach (var portal in portals)

@@ -54,11 +54,6 @@ public class Portal : MonoBehaviour
         }
     }
 
-    public void RenderPrep()
-    {
-
-    }
-
     public void Render()
     {
         eventHorizon.enabled = false;
@@ -73,7 +68,7 @@ public class Portal : MonoBehaviour
 
     public void RenderComplete()
     {
-
+        HandlePlayerCamTransition(firstPersonCamera.transform.position);
     }
 
     void GenerateViewTexture()
@@ -92,6 +87,30 @@ public class Portal : MonoBehaviour
             endPortal.eventHorizon.material.SetTexture("_MainTex", viewTexture);
         }
     }
+
+    float HandlePlayerCamTransition(Vector3 cameraPosition)
+    {
+        float eventHorizonHeight, eventHorizonWidth, eventHorizonThickness;
+        var nearClipPlane = firstPersonCamera.nearClipPlane;
+        var FOV = firstPersonCamera.fieldOfView;
+        var cameraAspect = firstPersonCamera.aspect;
+
+        eventHorizonHeight = nearClipPlane * Mathf.Tan(Mathf.Deg2Rad * 0.5f * FOV);
+        eventHorizonWidth = cameraAspect * eventHorizonHeight;
+        eventHorizonThickness = new Vector3(eventHorizonWidth, eventHorizonHeight, nearClipPlane).magnitude;
+
+        Transform horizonTransform = eventHorizon.transform;
+        bool cameraRelativeDirection = Vector3.Dot(transform.forward, transform.position - cameraPosition) > 0;
+
+        var scale = horizonTransform.localScale;
+        var pos = horizonTransform.localPosition;
+
+        horizonTransform.localScale = new Vector3(scale.x, scale.y, eventHorizonThickness);
+        horizonTransform.localPosition = new Vector3(pos.x, pos.y, 0) + (Vector3.forward * (cameraRelativeDirection ? 0.5f : -0.5f) * eventHorizonThickness);
+
+        return eventHorizonThickness;
+    }
+
     void OnObjectPassEventHorizon (EventHorizonTransition obj)
     {
         if(!transitionObjects.Contains(obj))
