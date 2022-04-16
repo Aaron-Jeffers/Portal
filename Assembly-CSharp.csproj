@@ -56,20 +56,19 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\PortalManager.cs" />
-    <Compile Include="Assets\Scripts\UI.cs" />
-    <Compile Include="Assets\Scripts\Portal.cs" />
-    <Compile Include="Assets\Scripts\EventHorizonTransition.cs" />
-    <Compile Include="Assets\Scripts\PlayerInteract.cs" />
-    <Compile Include="Assets\Scripts\Scene.cs" />
-    <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
-    <Compile Include="Assets\Scripts\Throwable.cs" />
-    <Compile Include="Assets\Scripts\RockSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Portal\PortalManager.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\UI.cs" />
+    <Compile Include="Assets\Scripts\Portal\Portal.cs" />
+    <Compile Include="Assets\Scripts\Portal\EventHorizonTransition.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInteract.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\Scene.cs" />
+    <Compile Include="Assets\Scripts\Player\FirstPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\Player\Throwable.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\RockSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\PortalScratchy.shader" />
-    <None Include="Assets\Scripts\Portal.shader" />
+    <None Include="Assets\Scripts\Shaders\Portal.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
