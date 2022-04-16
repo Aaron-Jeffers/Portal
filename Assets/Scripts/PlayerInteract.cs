@@ -71,7 +71,7 @@ public class PlayerInteract : MonoBehaviour
                 linkCheck = portalManager.portals[1].activeSelf;
                 HandlePortalConnection(0, 1, 4, 5, linkCheck);
                 break;
-            case "test":
+            case "venus":
                 linkCheck = portalManager.portals[3].activeSelf;
                 HandlePortalConnection(2, 3, 4, 5, linkCheck);
                 break;

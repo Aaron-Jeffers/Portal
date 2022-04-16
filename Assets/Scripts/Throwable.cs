@@ -7,6 +7,7 @@ public class Throwable : EventHorizonTransition
     Rigidbody rb;
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
+    float venusGravity = -27.6f;
     float gravity;
     private void Start()
     {
@@ -33,6 +34,9 @@ public class Throwable : EventHorizonTransition
                 break;
             case "moonBoundary":
                 gravity = moonGravity;
+                break;
+            case "venusBoundary":
+                gravity = venusGravity;
                 break;
             default:
                 break;

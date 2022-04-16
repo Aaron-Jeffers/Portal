@@ -1,4 +1,5 @@
 
 Temp/UnityLockfile
-Library\Il2cppBuildCache
-Library\il2cpp_cache
+Library/Il2cppBuildCache
+Library/il2cpp_cache
+.vs

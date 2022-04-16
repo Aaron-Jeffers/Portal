@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PortalManager.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\EventHorizonTransition.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Throwable.cs" />
     <Compile Include="Assets\Scripts\RockSpawner.cs" />
-    <Compile Include="Assets\Scripts\PortalManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\PortalScratchy.shader" />

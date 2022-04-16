@@ -7,6 +7,8 @@ public class PlayerController : EventHorizonTransition
     [SerializeField]
     [Header("Movement Variables", order = 0)]
     public float walkSpeed;
+    public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier;
+    float worldSpeedMultiplier;
     public float sprintMultiplier;
     float sprintSpeed;
     public float strafeMultiplier;
@@ -18,6 +20,7 @@ public class PlayerController : EventHorizonTransition
     public bool isGrounded;
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
+    float venusGravity = -27.6f;
     float gravity;
     public float jumpForce;
 
@@ -53,7 +56,7 @@ public class PlayerController : EventHorizonTransition
     }
     private void Movement()
     {
-        float forwardSpeed = (Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed;
+        float forwardSpeed = ((Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed) * worldSpeedMultiplier;
 
         zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
         xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
@@ -132,7 +135,7 @@ public class PlayerController : EventHorizonTransition
                 gravity = moonGravity;
                 break;
             case "venusBoundary":               
-                gravity = moonGravity;
+                gravity = venusGravity;
                 break;
             default:
                 break;
@@ -146,12 +149,15 @@ public class PlayerController : EventHorizonTransition
         {
             case "earthBoundary":
                 playerLocation = "earth";
+                worldSpeedMultiplier = earthSpeedMultiplier;
                 break;
             case "moonBoundary":
                 playerLocation = "moon";
+                worldSpeedMultiplier = moonSpeedMultiplier;
                 break;
             case "venusBoundary":
                 playerLocation = "venus";
+                worldSpeedMultiplier = venusSpeedMultiplier;
                 break;
             default:
                 break;
