@@ -13,9 +13,14 @@ public class PlayerInteract : MonoBehaviour
     public float grabDistance;
     public Vector3 grabbedObjectOffset;
 
-    private void Start()
+    //Portal Manager Variables
+    string playerLocation;
+    PortalManager portalManager;
+
+    private void Awake()
     {
         playerCam = GetComponentInChildren<Camera>();
+        portalManager = FindObjectOfType<PortalManager>();
     }
     private void Update()
     {
@@ -26,21 +31,60 @@ public class PlayerInteract : MonoBehaviour
 
     void InputHandler()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isGrabbing)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             var obj = Raycast();
 
-            if (obj.collider.CompareTag("rock"))
+            switch (obj.collider.tag.ToString())
             {
-                interactObj = obj.collider.gameObject;
-                isGrabbing = true;
-            }             
+                case "rock":
+                    if(!isGrabbing)
+                    {
+                        interactObj = obj.collider.gameObject;
+                        isGrabbing = true;
+                    }                    
+                    break;
+                case "button":
+                    UpdatePortalAddress();
+                    break;
+                default:
+                    break;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && isGrabbing)
         {
             Throw(interactObj);
         }
+    }
+
+    void UpdatePortalAddress()
+    {
+        bool linkCheck;
+        switch (playerLocation)
+        {
+            case "earth":
+                linkCheck = portalManager.portals[0].activeSelf;
+                HandlePortalConnection(0, 1, 2, 3, linkCheck);
+                break;
+            case "moon":
+                linkCheck = portalManager.portals[1].activeSelf;
+                HandlePortalConnection(0, 1, 4, 5, linkCheck);
+                break;
+            case "test":
+                linkCheck = portalManager.portals[3].activeSelf;
+                HandlePortalConnection(2, 3, 4, 5, linkCheck);
+                break;
+            default:
+                break;
+        }
+    }
+    void HandlePortalConnection(int a, int b, int c, int d, bool swap)
+    {
+        portalManager.portals[a].SetActive(!swap);
+        portalManager.portals[b].SetActive(!swap);
+        portalManager.portals[c].SetActive(swap);
+        portalManager.portals[d].SetActive(swap);
     }
 
     private RaycastHit Raycast()
@@ -59,15 +103,17 @@ public class PlayerInteract : MonoBehaviour
         {
             return;
         }
-        
-        if(Raycast().collider.CompareTag("rock"))
+
+        var obj = Raycast().collider;
+
+        if(obj.CompareTag("rock"))
         {
-            highlightObj = Raycast().collider.gameObject;
+            highlightObj = obj.gameObject;
             highlightObj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         }
 
         else if (highlightObj)
-        {           
+        {
             highlightObj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         }
     }
@@ -96,5 +142,27 @@ public class PlayerInteract : MonoBehaviour
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.AddForce(throwForce * playerCam.transform.forward);
+
+        float minSpin = 0f, maxSpin = 10f;
+        Vector3 spin = new Vector3(Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin));
+        rb.AddTorque(spin, ForceMode.Impulse);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        switch (other.tag.ToString())
+        {
+            case "earthBoundary":
+                playerLocation = "earth";
+                break;
+            case "moonBoundary":
+                playerLocation = "moon";
+                break;
+            case "venusBoundary":
+                playerLocation = "venus";
+                break;
+            default:
+                break;
+        }
     }
 }

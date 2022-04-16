@@ -4,34 +4,47 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    Portal[] portals;
-    public Material defaultSkybox, secondarySkybox;
-    bool defSkybox = true;
-
-    private void Awake()
-    {
-        portals = FindObjectsOfType<Portal>();
-    }
+    public Portal[] portals;
+    public Material earthSkybox, moonSkybox, venusSkybox;
 
     private void Start()
     {
-        SwitchSkybox();
+        SwitchSkybox("Moon2Earth");
     }
+    
     private void OnPreCull()
     {
         foreach (var portal in portals)
         {
             portal.Render();
-        }
-        foreach (var portal in portals)
-        {
             portal.RenderComplete();
         }
     }
 
-    public void SwitchSkybox()
+    public void SwitchSkybox(string portalDirection)
     {
-        RenderSettings.skybox = defSkybox ? defaultSkybox : secondarySkybox;
-        defSkybox = !defSkybox;
+        switch (portalDirection)
+        {
+            case "Earth2Moon":
+                RenderSettings.skybox = moonSkybox;
+                break;
+            case "Moon2Earth":
+                RenderSettings.skybox = earthSkybox;
+                break;
+            case "Earth2Venus":
+                RenderSettings.skybox = venusSkybox;
+                break;
+            case "Venus2Earth":
+                RenderSettings.skybox = earthSkybox;
+                break;
+            case "Moon2Venus":
+                RenderSettings.skybox = venusSkybox;
+                break;
+            case "Venus2Moon":
+                RenderSettings.skybox = moonSkybox;
+                break;
+            default:
+                break;
+        }
     }
 }

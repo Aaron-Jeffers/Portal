@@ -499,7 +499,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 6ea034559a67d5ae9664815c2cb7d276
+      Hash: 4ed344dc962c17876942e6955821accf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerInteract
@@ -905,7 +905,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0e50f13657ced62a973f687262550281
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RockSpawner
   platform: 20
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0_3_1_WebGL
+  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0_4_WebGL

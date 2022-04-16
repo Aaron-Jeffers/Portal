@@ -10,6 +10,9 @@ TagManager:
   - moonBoundary
   - portal
   - rock
+  - button
+  - testBoundary
+  - venusBoundary
   layers:
   - Default
   - TransparentFX

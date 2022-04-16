@@ -8,9 +8,9 @@ public class PlayerController : EventHorizonTransition
     [Header("Movement Variables", order = 0)]
     public float walkSpeed;
     public float sprintMultiplier;
-    private float sprintSpeed;
+    float sprintSpeed;
     public float strafeMultiplier;
-    private Rigidbody rb;
+    Rigidbody rb;
     public Vector3 xVelocity, yVelocity, zVelocity;
 
     [SerializeField]
@@ -24,12 +24,13 @@ public class PlayerController : EventHorizonTransition
     [SerializeField]
     [Header("Camera Variables", order = 2)]
     public Transform cameraTransform;
-    private Camera playerCam;   
+    Camera playerCam;   
     public float mouseSensitivity;
     float pitch;
     public float pitchMin, pitchMax;
     public float smoothTimeRot;
-    private float yaw;
+    float yaw;
+    public string playerLocation = "earth";
 
     private void Start()
     {
@@ -86,12 +87,12 @@ public class PlayerController : EventHorizonTransition
         }
     }
 
-    public override void Transition(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
+    public override void Transition(Transform fromPortal, Transform toPortal,string endPortal, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
         Physics.SyncTransforms();
         isGrounded = true;
-        playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox();
+        playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
     }
 
 
@@ -124,15 +125,36 @@ public class PlayerController : EventHorizonTransition
                 //isGrounded = true;
                 //yVelocity = Vector3.zero;
                 break;
-            case "earthBoundary":
+            case "earthBoundary":                
                 gravity = earthGravity;
                 break;
-            case "moonBoundary":
+            case "moonBoundary":                
+                gravity = moonGravity;
+                break;
+            case "venusBoundary":               
                 gravity = moonGravity;
                 break;
             default:
                 break;
         }
-       
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag.ToString())
+        {
+            case "earthBoundary":
+                playerLocation = "earth";
+                break;
+            case "moonBoundary":
+                playerLocation = "moon";
+                break;
+            case "venusBoundary":
+                playerLocation = "venus";
+                break;
+            default:
+                break;
+        }
     }
 }

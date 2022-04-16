@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    PortalManager portalManager;
     public Portal endPortal;
     public MeshRenderer eventHorizon;
 
@@ -13,17 +14,27 @@ public class Portal : MonoBehaviour
 
     List<EventHorizonTransition> transitionObjects;
 
+    int index;
     private void Awake()
     {
         firstPersonCamera = Camera.main;
         portalCamera = GetComponentInChildren<Camera>();
         portalCamera.enabled = false;
         transitionObjects = new List<EventHorizonTransition>();
+        portalManager = FindObjectOfType<PortalManager>();
+    }
+    private void Start()
+    {
+        index = portalManager.portals.IndexOf(this.gameObject);
+        if(index >= 2)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void LateUpdate()
     {
-        Transitions();
+        Transitions();       
     }
 
     void Transitions()
@@ -40,7 +51,7 @@ public class Portal : MonoBehaviour
 
             if (eventHorizonExitParallel != eventHorizonEntranceParallel)
             {
-                transitioningObject.Transition(transform, endPortal.transform, tranObjMatrix.GetColumn(3), tranObjMatrix.rotation);
+                transitioningObject.Transition(transform, endPortal.transform, this.name, tranObjMatrix.GetColumn(3), tranObjMatrix.rotation);
 
                 endPortal.OnObjectPassEventHorizon(transitioningObject);
                 transitionObjects.RemoveAt(i);
@@ -143,8 +154,6 @@ public class Portal : MonoBehaviour
             transitionObjects.Add(obj);
         }
     }
-
-    
 
     private void OnTriggerEnter(Collider obj)
     {

@@ -6,7 +6,7 @@ public class EventHorizonTransition : MonoBehaviour
 {
     public Vector3 lastEventHorizonOffset {get;set;}
 
-    public virtual void Transition (Transform beginningPortal, Transform endPortal, Vector3 pos, Quaternion rot)
+    public virtual void Transition (Transform beginningPortal, Transform endPortal, string endPortalName, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
         transform.rotation = rot;
