@@ -274,7 +274,6 @@
 "Assets/Scripts/PortalManager.cs"
 "Assets/Scripts/RockSpawner.cs"
 "Assets/Scripts/Scene.cs"
-"Assets/Scripts/Terrain2Object.cs"
 "Assets/Scripts/Throwable.cs"
 "Assets/Scripts/UI.cs"
 -langversion:8.0
