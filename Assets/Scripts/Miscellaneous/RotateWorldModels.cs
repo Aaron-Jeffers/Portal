@@ -8,6 +8,7 @@ public class RotateWorldModels : MonoBehaviour
 
     private void Update()
     {
-        this.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        //var rot = System.Math.Round(rotateSpeed * Time.realtimeSinceStartup, 6);
+        transform.rotation = Quaternion.Euler(0, rotateSpeed * Time.realtimeSinceStartup, 0);
     }
 }
