@@ -8,7 +8,8 @@ public class PlayerInteract : MonoBehaviour
     public bool isGrabbing = false;
 
     //Interactable Object Variables
-    GameObject interactObj, highlightObj;
+    GameObject grabObj;
+    GameObject highlightObj;
     public float throwForce;
     public float grabDistance;
     public Vector3 grabbedObjectOffset;
@@ -21,12 +22,18 @@ public class PlayerInteract : MonoBehaviour
     {
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();
+        highlightObj = FindObjectOfType<Interactable>().gameObject;
     }
     private void Update()
     {
         InputHandler();
         HighlightRaycast();
-        Grab(interactObj);
+        Grab(grabObj);
+    }
+
+    private void FixedUpdate()
+    {
+        //HighlightRaycast();
     }
 
     void InputHandler()
@@ -40,7 +47,7 @@ public class PlayerInteract : MonoBehaviour
                 case "rock":
                     if(!isGrabbing)
                     {
-                        interactObj = obj.collider.gameObject;
+                        grabObj = obj.collider.gameObject;
                         isGrabbing = true;
                     }                    
                     break;
@@ -54,7 +61,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && isGrabbing)
         {
-            Throw(interactObj);
+            Throw(grabObj);
         }
     }
 
@@ -101,20 +108,17 @@ public class PlayerInteract : MonoBehaviour
     {
         if(isGrabbing || !Raycast().collider)
         {
+            highlightObj.SendMessage("Highlight", false);
             return;
         }
 
-        var obj = Raycast().collider;
+        highlightObj.SendMessage("Highlight", false);
+        var temp = Raycast().collider.gameObject;
 
-        if(obj.CompareTag("rock"))
+        if(temp.CompareTag("rock"))
         {
-            highlightObj = obj.gameObject;
-            highlightObj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-        }
-
-        else if (highlightObj)
-        {
-            highlightObj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            highlightObj = temp;
+            highlightObj.SendMessage("Highlight", true);
         }
     }
 

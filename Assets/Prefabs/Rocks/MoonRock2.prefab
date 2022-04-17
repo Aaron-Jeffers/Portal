@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8182836098030785968}
   - component: {fileID: 7361246168782703277}
   - component: {fileID: 1858853255595215987}
+  - component: {fileID: 1515051763413000970}
   - component: {fileID: 5794645926197749126}
   m_Layer: 0
   m_Name: MoonRock2
@@ -115,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1515051763413000970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423232433403688758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f28284380a20244974765b4603f164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5794645926197749126
 MonoBehaviour:
   m_ObjectHideFlags: 0

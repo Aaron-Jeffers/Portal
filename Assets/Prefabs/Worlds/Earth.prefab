@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532873093206252865}
+  - component: {fileID: 9207077433242025460}
+  - component: {fileID: 963937356}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -33,6 +35,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &9207077433242025460
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532873093206252990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &963937356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532873093206252990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bb469474e0da84abd8f61ba2e2868c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5588507078702392030
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +71,6 @@ GameObject:
   - component: {fileID: 3690826245438829029}
   - component: {fileID: 2012930594928052399}
   - component: {fileID: 3083531531060309051}
-  - component: {fileID: 5588507078702392033}
   m_Layer: 0
   m_Name: Land
   m_TagString: Untagged
@@ -116,20 +142,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5588507078702392033
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5588507078702392030}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: ef0c24831b97c3a43833a8d5680a2de6, type: 3}
 --- !u!1 &7214854598278457166
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +153,6 @@ GameObject:
   - component: {fileID: 1915858851738236021}
   - component: {fileID: 3621263698490232127}
   - component: {fileID: 244577586244757931}
-  - component: {fileID: 7214854598278457169}
   m_Layer: 0
   m_Name: Sea
   m_TagString: Untagged
@@ -213,20 +224,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7214854598278457169
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7214854598278457166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 916197b6949fb1e468182df0b0ccd830, type: 3}
 --- !u!1 &7634999168185963303
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +235,6 @@ GameObject:
   - component: {fileID: 1676139732506935324}
   - component: {fileID: 4581840224633272662}
   - component: {fileID: 1058430890650082754}
-  - component: {fileID: 7634999168185963302}
   m_Layer: 0
   m_Name: Poles
   m_TagString: Untagged
@@ -310,17 +306,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7634999168185963302
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634999168185963303}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 50e3590a5b7405440987ace59c76eb47, type: 3}

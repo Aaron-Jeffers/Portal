@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6571495074757252430}
   - component: {fileID: 7644607295380369882}
   - component: {fileID: 3176099370034034124}
+  - component: {fileID: 834555886}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960291286032498495}
-  m_LocalRotation: {x: -0, y: -0.5897911, z: -0, w: 0.8075559}
+  m_LocalRotation: {x: 0, y: -0.58978844, z: 0, w: 0.8075578}
   m_LocalPosition: {x: 20.283, y: -6.678, z: -41.143}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
@@ -97,3 +98,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 313b2792b366bef4caff25e151853343, type: 3}
+--- !u!114 &834555886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960291286032498495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bb469474e0da84abd8f61ba2e2868c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

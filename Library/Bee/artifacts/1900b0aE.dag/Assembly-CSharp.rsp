@@ -324,6 +324,7 @@
 "Assets/Scripts/Miscellaneous/Scene.cs"
 "Assets/Scripts/Miscellaneous/UI.cs"
 "Assets/Scripts/Player/FirstPersonCamera.cs"
+"Assets/Scripts/Player/Interactable.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/PlayerInteract.cs"
 "Assets/Scripts/Player/Throwable.cs"

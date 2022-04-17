@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1574188376897031725}
   - component: {fileID: 4560021185855276254}
   - component: {fileID: 4332168495687730698}
+  - component: {fileID: -8634197018137718872}
   - component: {fileID: 4050835211913021637}
   m_Layer: 0
   m_Name: EarthRock1
@@ -115,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8634197018137718872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258504396176883912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f28284380a20244974765b4603f164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4050835211913021637
 MonoBehaviour:
   m_ObjectHideFlags: 0

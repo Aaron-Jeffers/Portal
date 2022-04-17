@@ -9,15 +9,19 @@ public class Throwable : EventHorizonTransition
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
     float gravity;
+   
     private void Start()
     {
+       
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
     }
     private void FixedUpdate()
     {
         rb.AddForce(Vector3.up * rb.mass * gravity);
+        
     }
+
     public override void Transition(Transform fromPortal, Transform toPortal, string endPortal, Vector3 pos, Quaternion rot)
     {
         base.Transition(fromPortal, toPortal, endPortal, pos, rot);
