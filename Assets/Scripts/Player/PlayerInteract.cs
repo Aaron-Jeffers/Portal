@@ -27,32 +27,36 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
         InputHandler();
-        //HighlightRaycast();
         Grab(grabObj);
+        HighlightRaycast();
     }
 
     private void FixedUpdate()
     {
-        HighlightRaycast();
+        //HighlightRaycast();
     }
 
     void InputHandler()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            var obj = Raycast();
+            var obj = Raycast(playerCam.transform.position, playerCam.transform.forward,grabDistance).collider;
 
-            switch (obj.collider.tag.ToString())
+            if(!obj)
+            {
+                return;
+            }
+            switch (obj.tag.ToString())
             {
                 case "rock":
                     if(!isGrabbing)
                     {
-                        grabObj = obj.collider.gameObject;
+                        grabObj = obj.gameObject;
                         isGrabbing = true;
                     }                    
                     break;
                 case "button":
-                    UpdatePortalAddress(obj.collider.gameObject);
+                    UpdatePortalAddress(obj.gameObject);
                     break;
                 default:
                     break;
@@ -67,7 +71,7 @@ public class PlayerInteract : MonoBehaviour
 
     void UpdatePortalAddress(GameObject obj)
     {
-        highlightObj.SendMessage("Highlight", false);
+        highlightObj.SendMessage("Highlight", false, SendMessageOptions.DontRequireReceiver);
         highlightObj = placeholderHighlightObject;
         bool linkCheck;
         switch (playerLocation)
@@ -96,19 +100,20 @@ public class PlayerInteract : MonoBehaviour
         portalManager.portals[d].SetActive(swap);
     }
 
-    private RaycastHit Raycast()
+    private RaycastHit Raycast(Vector3 startPos, Vector3 direction, float distance)
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, grabDistance))
+        if (Physics.Raycast(startPos, direction, out hit, distance))
         {
+            //Debug.DrawRay(startPos, direction, Color.cyan, distance);
             return hit;
         }
         return hit;
     }
     private void HighlightRaycast()
     {
-        if(isGrabbing || !Raycast().collider)
+        if(isGrabbing || !Raycast(playerCam.transform.position, playerCam.transform.forward, grabDistance).collider)
         {
             highlightObj.SendMessage("Highlight", false);
             //highlightObj.GetComponent<Interactable>().Highlight(false);
@@ -118,23 +123,57 @@ public class PlayerInteract : MonoBehaviour
         highlightObj.SendMessage("Highlight", false);
         //highlightObj.GetComponent<Interactable>().Highlight(false);
 
-        var temp = Raycast().collider.gameObject;
+        var ray = Raycast(playerCam.transform.position, playerCam.transform.forward, grabDistance);
 
-        switch (temp.tag.ToString())
+        if(ray.collider)
+        {
+            RaycastSwitch(ray);
+        }        
+    }
+
+    void RaycastSwitch(RaycastHit ray)
+    {
+        var obj = ray.collider.gameObject;
+
+        switch (obj.tag.ToString())
         {
             case "rock":
-                highlightObj = temp;
+                highlightObj = obj;
                 highlightObj.SendMessage("Highlight", true);
                 //highlightObj.GetComponent<Interactable>().Highlight(true);
                 break;
+
             case "button":
-                highlightObj = temp;
+                highlightObj = obj;
                 highlightObj.SendMessage("Highlight", true);
                 //highlightObj.GetComponent<Interactable>().Highlight(false);
                 break;
-            default: break;
+
+            case "portal":
+                var portal = obj.GetComponent<Portal>();
+                Vector3 newRayPositionOffset = portal.endPortal.gameObject.transform.position - portal.gameObject.transform.position;
+
+                float rayCloneDistance = grabDistance - ray.distance;
+                Vector3 newRayPosition = ray.point + newRayPositionOffset;
+
+                var raycastClone = Raycast(newRayPosition, playerCam.transform.forward, rayCloneDistance);
+                
+                if(raycastClone.collider && (raycastClone.collider.tag == "rock"))
+                {
+                    highlightObj = raycastClone.collider.gameObject;
+                    highlightObj.SendMessage("Highlight", true);
+
+                    if (!isGrabbing && Input.GetKey(KeyCode.Mouse0))
+                    {
+                        grabObj = highlightObj;
+                        isGrabbing = true;
+                    }
+                }
+                break;
+
+            default: 
+                break;
         }
-               
     }
 
     void Grab(GameObject obj)

@@ -64,14 +64,15 @@
     <Compile Include="Assets\Scripts\Portal\EventHorizonTransition.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RotateWorldModels.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\RockSpawner.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\Scene.cs" />
     <Compile Include="Assets\Scripts\Player\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Player\Throwable.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RockInitialise.cs" />
-    <Compile Include="Assets\Scripts\Miscellaneous\RockSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Scripts\Shaders\Wormhole.shader" />
     <None Include="Assets\Scripts\Shaders\NewPortal.shader" />
     <None Include="Assets\Scripts\Shaders\Portal.shader" />
   </ItemGroup>

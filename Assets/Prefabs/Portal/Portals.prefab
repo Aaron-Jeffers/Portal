@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 4732475361864117681}
   m_Layer: 0
   m_Name: EventHorizon
-  m_TagString: Untagged
+  m_TagString: eventHorizon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 4732475363394783347}
   m_Layer: 0
   m_Name: EventHorizon
-  m_TagString: Untagged
+  m_TagString: eventHorizon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

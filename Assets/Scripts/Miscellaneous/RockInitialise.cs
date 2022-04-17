@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RockInitialise : MonoBehaviour 
 {
-    Vector2 newScaleRange= new Vector2(0.8f,1.2f);
+    Vector2 newScaleRange = new Vector2(0.8f, 1.2f);
     Rigidbody rb;
 
     private void Start()
     {
-        float oldScale = transform.localScale.x;               
+        float oldScale = transform.localScale.x;
         transform.localScale *= Random.Range(newScaleRange.x, newScaleRange.y);
         float newScale = transform.localScale.x;
 

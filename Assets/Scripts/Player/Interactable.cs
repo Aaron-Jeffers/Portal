@@ -20,6 +20,7 @@ public class Interactable : MonoBehaviour
                 material.EnableKeyword("_EMISSION");
                 break;
             case false:
+                //StartCoroutine(DisableHighlight(0));
                 material.DisableKeyword("_EMISSION");
                 break;
         }
@@ -28,5 +29,11 @@ public class Interactable : MonoBehaviour
     public GameObject GetGameObject()
     {
         return gameObject;
+    }
+
+    IEnumerator DisableHighlight(float time)
+    {
+        yield return new WaitForSeconds(time);
+        material.DisableKeyword("_EMISSION");
     }
 }
