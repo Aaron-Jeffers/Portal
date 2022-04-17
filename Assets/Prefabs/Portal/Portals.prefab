@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6272381311122820948
 Transform:
@@ -114,7 +114,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7098172409603915834
 Transform:
@@ -528,7 +528,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 80
   orthographic: 0
   orthographic size: 5
@@ -790,7 +790,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 80
   orthographic: 0
   orthographic size: 5
@@ -898,8 +898,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.9245195, y: 4.6993313, z: 1.7120929}
-  m_Center: {x: -0.03761006, y: 1.7200713, z: 0.14690234}
+  m_Size: {x: 5.72, y: 6, z: 1.55}
+  m_Center: {x: 0, y: 1.84, z: 0}
 --- !u!1 &4732475363152621938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,8 +1227,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.9245195, y: 4.6993313, z: 1.7120929}
-  m_Center: {x: -0.03761006, y: 1.7200713, z: 0.14690234}
+  m_Size: {x: 5.72, y: 6, z: 1.55}
+  m_Center: {x: 0, y: 1.84, z: 0}
 --- !u!1 &5012524645796591827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1455,7 @@ GameObject:
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8180444512072827701
 Transform:
@@ -1552,7 +1552,7 @@ GameObject:
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1112197071234026250
 Transform:

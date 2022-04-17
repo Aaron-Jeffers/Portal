@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Portal\WorldSwitch.cs" />
     <Compile Include="Assets\Scripts\Portal\PortalManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\UI.cs" />
     <Compile Include="Assets\Scripts\Portal\Portal.cs" />
@@ -67,10 +68,11 @@
     <Compile Include="Assets\Scripts\Player\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Player\Throwable.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\RockInitialise.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RockSpawner.cs" />
-    <Compile Include="Assets\Scripts\Portal\WorldSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Scripts\Shaders\NewPortal.shader" />
     <None Include="Assets\Scripts\Shaders\Portal.shader" />
   </ItemGroup>
   <ItemGroup>

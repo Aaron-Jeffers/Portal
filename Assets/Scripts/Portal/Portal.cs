@@ -33,7 +33,6 @@ public class Portal : MonoBehaviour
         switch (endPortalWorldSpace)
         {
             case 0:
-                Debug.Log("Test");
                 worldModels[1].SetActive(false);
                 worldModels[2].SetActive(false);
                 break;

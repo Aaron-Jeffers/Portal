@@ -22,8 +22,6 @@ public class Interactable : MonoBehaviour
             case false:
                 material.DisableKeyword("_EMISSION");
                 break;
-            default:
-                break;
         }
     }
 

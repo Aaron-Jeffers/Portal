@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     public bool isGrabbing = false;
 
     //Interactable Object Variables
-    public GameObject initHighlightObj;
+    public GameObject placeholderHighlightObject;
     GameObject grabObj,highlightObj;
     public float throwForce;
     public float grabDistance;
@@ -20,20 +20,20 @@ public class PlayerInteract : MonoBehaviour
 
     private void Awake()
     {
-        highlightObj = initHighlightObj;
+        highlightObj = placeholderHighlightObject;
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();
     }
     private void Update()
     {
         InputHandler();
-        HighlightRaycast();
+        //HighlightRaycast();
         Grab(grabObj);
     }
 
     private void FixedUpdate()
     {
-        //HighlightRaycast();
+        HighlightRaycast();
     }
 
     void InputHandler()
@@ -68,7 +68,7 @@ public class PlayerInteract : MonoBehaviour
     void UpdatePortalAddress(GameObject obj)
     {
         highlightObj.SendMessage("Highlight", false);
-        highlightObj = initHighlightObj;
+        highlightObj = placeholderHighlightObject;
         bool linkCheck;
         switch (playerLocation)
         {
@@ -111,11 +111,13 @@ public class PlayerInteract : MonoBehaviour
         if(isGrabbing || !Raycast().collider)
         {
             highlightObj.SendMessage("Highlight", false);
+            //highlightObj.GetComponent<Interactable>().Highlight(false);
             return;
         }
        
-        highlightObj.SendMessage("Highlight", false);        
-        
+        highlightObj.SendMessage("Highlight", false);
+        //highlightObj.GetComponent<Interactable>().Highlight(false);
+
         var temp = Raycast().collider.gameObject;
 
         switch (temp.tag.ToString())
@@ -123,13 +125,16 @@ public class PlayerInteract : MonoBehaviour
             case "rock":
                 highlightObj = temp;
                 highlightObj.SendMessage("Highlight", true);
+                //highlightObj.GetComponent<Interactable>().Highlight(true);
                 break;
             case "button":
                 highlightObj = temp;
                 highlightObj.SendMessage("Highlight", true);
+                //highlightObj.GetComponent<Interactable>().Highlight(false);
                 break;
             default: break;
         }
+               
     }
 
     void Grab(GameObject obj)
@@ -157,7 +162,7 @@ public class PlayerInteract : MonoBehaviour
         rb.isKinematic = false;
         rb.AddForce(throwForce * playerCam.transform.forward);
 
-        float minSpin = 0f, maxSpin = 10f;
+        float minSpin = 0f, maxSpin = 500f;
         Vector3 spin = new Vector3(Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin));
         rb.AddTorque(spin, ForceMode.Impulse);
     }
