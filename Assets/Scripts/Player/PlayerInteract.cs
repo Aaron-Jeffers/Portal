@@ -8,8 +8,8 @@ public class PlayerInteract : MonoBehaviour
     public bool isGrabbing = false;
 
     //Interactable Object Variables
-    GameObject grabObj;
-    GameObject highlightObj;
+    public GameObject initHighlightObj;
+    GameObject grabObj,highlightObj;
     public float throwForce;
     public float grabDistance;
     public Vector3 grabbedObjectOffset;
@@ -20,9 +20,9 @@ public class PlayerInteract : MonoBehaviour
 
     private void Awake()
     {
+        highlightObj = initHighlightObj;
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();
-        highlightObj = FindObjectOfType<Interactable>().gameObject;
     }
     private void Update()
     {
@@ -52,7 +52,7 @@ public class PlayerInteract : MonoBehaviour
                     }                    
                     break;
                 case "button":
-                    UpdatePortalAddress();
+                    UpdatePortalAddress(obj.collider.gameObject);
                     break;
                 default:
                     break;
@@ -65,8 +65,10 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    void UpdatePortalAddress()
+    void UpdatePortalAddress(GameObject obj)
     {
+        highlightObj.SendMessage("Highlight", false);
+        highlightObj = initHighlightObj;
         bool linkCheck;
         switch (playerLocation)
         {
@@ -111,14 +113,22 @@ public class PlayerInteract : MonoBehaviour
             highlightObj.SendMessage("Highlight", false);
             return;
         }
-
-        highlightObj.SendMessage("Highlight", false);
+       
+        highlightObj.SendMessage("Highlight", false);        
+        
         var temp = Raycast().collider.gameObject;
 
-        if(temp.CompareTag("rock"))
+        switch (temp.tag.ToString())
         {
-            highlightObj = temp;
-            highlightObj.SendMessage("Highlight", true);
+            case "rock":
+                highlightObj = temp;
+                highlightObj.SendMessage("Highlight", true);
+                break;
+            case "button":
+                highlightObj = temp;
+                highlightObj.SendMessage("Highlight", true);
+                break;
+            default: break;
         }
     }
 

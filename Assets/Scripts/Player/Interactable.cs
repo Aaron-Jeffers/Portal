@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
     private void Start()
     {
         material = gameObject.GetComponent<Renderer>().material;
+        material.DisableKeyword("_EMISSION");
     }
 
     public void Highlight(bool Emmision)
@@ -24,5 +25,10 @@ public class Interactable : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
     }
 }
