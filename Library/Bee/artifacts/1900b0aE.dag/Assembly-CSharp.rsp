@@ -331,6 +331,7 @@
 "Assets/Scripts/Portal/EventHorizonTransition.cs"
 "Assets/Scripts/Portal/Portal.cs"
 "Assets/Scripts/Portal/PortalManager.cs"
+"Assets/Scripts/Portal/WorldSwitch.cs"
 -langversion:8.0
 
 /deterministic

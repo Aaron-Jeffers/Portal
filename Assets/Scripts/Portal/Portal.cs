@@ -6,6 +6,8 @@ public class Portal : MonoBehaviour
 {
     PortalManager portalManager;
     public Portal endPortal;
+    public int endPortalWorldSpace;
+
     public MeshRenderer eventHorizon;
 
     Camera firstPersonCamera, portalCamera;
@@ -13,6 +15,8 @@ public class Portal : MonoBehaviour
     RenderTexture viewTexture;
 
     List<EventHorizonTransition> transitionObjects;
+    public List<GameObject> worldModels;
+    
 
     int index;
     private void Awake()
@@ -21,10 +25,30 @@ public class Portal : MonoBehaviour
         portalCamera = GetComponentInChildren<Camera>();
         portalCamera.enabled = false;
         transitionObjects = new List<EventHorizonTransition>();
-        portalManager = FindObjectOfType<PortalManager>();
+        portalManager = FindObjectOfType<PortalManager>(); 
+        
     }
     private void Start()
-    {
+    {        
+        switch (endPortalWorldSpace)
+        {
+            case 0:
+                Debug.Log("Test");
+                worldModels[1].SetActive(false);
+                worldModels[2].SetActive(false);
+                break;
+            case 1:
+                worldModels[0].SetActive(false);
+                worldModels[2].SetActive(false);
+                break;
+            case 2:
+                worldModels[0].SetActive(false);
+                worldModels[1].SetActive(false);
+                break;
+            default:
+                break;
+        }
+
         index = portalManager.portals.IndexOf(this.gameObject);
         if(index >= 2)
         {
