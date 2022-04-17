@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Player\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Player\Throwable.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RockSpawner.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\RotateWorldModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Shaders\Portal.shader" />
