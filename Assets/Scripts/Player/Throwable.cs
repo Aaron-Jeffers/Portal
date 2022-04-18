@@ -14,7 +14,7 @@ public class Throwable : EventHorizonTransition
     AudioManager audioManager;
     PlayerController player;
     public string environment;
-    float audioDelay = -2f, delayLimit = 1f;
+    float audioDelay = -2f, delayLimit = 0.1f;
 
     private void Start()
     {
@@ -68,16 +68,20 @@ public class Throwable : EventHorizonTransition
         {
             pitch = audioManager.earthPitch;
         }
-        else
+        else if (environment == "venus")
         {
             pitch = audioManager.venusPitch;
+        }
+        else
+        {
+            pitch = 1;
         }
         float collisionDistanceDropOff = Vector3.Distance(collision.GetContact(0).point, player.GetComponent<Transform>().position);
         switch (collision.gameObject.tag.ToString())
         {           
             case "ground":
                 audioDelay = 0;
-                audioManager.PlayCollisionAudio(collision.relativeVelocity.magnitude, collisionDistanceDropOff, audioManager.thudVolume, pitch,audioManager.thud);
+                audioManager.PlayCollisionAudio(collision.relativeVelocity.magnitude, collisionDistanceDropOff, audioManager.thudVolume, pitch ,audioManager.thud);
                 break;
             case "tree":
                 audioDelay = 0;

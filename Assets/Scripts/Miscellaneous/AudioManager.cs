@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
         audioSourceNoise.clip = clip;
         audioSourceNoise.playOnAwake = false;
         audioSourceNoise.volume = magnitude * volume / (dist * dist);
+        audioSourceNoise.pitch = pitch;
         audioSourceNoise.PlayOneShot(clip);
     }
 

@@ -30149,3 +30149,1895 @@ Resuming Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000
 Assertion failed on expression: 'state.state == kUpToDate'
 Assertion failed on expression: 'state.artifactID == result'
  -> (artifact id: '63e77e6aee4bc713ee0cd5c98ba7aee0') in 0.004642 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004643 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.984 seconds
+Domain Reload Profiling:
+	ReloadAssembly (985ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (818ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (316ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (308ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (47ms)
+				ProcessInitializeOnLoadAttributes (245ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(20) subTarget(589825) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2960 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 198.8 MB.
+System memory in use after: 199.0 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3734.
+Total: 2.778200 ms (FindLiveObjects: 0.210800 ms CreateObjectMapping: 0.110600 ms MarkObjects: 2.443400 ms  DeleteObjects: 0.012600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 111.692373 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock4.prefab
+  artifactKey: Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock4.prefab using Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '963b807d1c14e051927621670b33ecac') in 0.007063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock1.prefab
+  artifactKey: Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock1.prefab using Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '4926d004e71ebea7cbce2169f97da1d7') in 0.004111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock2.prefab
+  artifactKey: Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock2.prefab using Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '8941bafe4bc841d6b7fe3b3ead3ec6f1') in 0.004121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock3.prefab
+  artifactKey: Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock3.prefab using Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '1f87066ab7c9ef6760e9492a58768424') in 0.004084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock1.prefab
+  artifactKey: Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock1.prefab using Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '67267c6831b9c9122565e3d5687372e4') in 0.004067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock3.prefab
+  artifactKey: Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock3.prefab using Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab from editor
+Resuming Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000) -> 00000000000000000000000000000000 (aborted)
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Sub-import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab skipped because a previous one failed already
+ -> (artifact id: 'c050725253c13a94cf29e68864c7eff3') in 0.003982 seconds 
+  Import took 0.007160 seconds (was aborted).
+========================================================================
+Received Import Request.
+  Time since last request: 0.056613 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock1.prefab
+  artifactKey: Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock1.prefab using Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '4926d004e71ebea7cbce2169f97da1d7') in 0.005265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock4.prefab
+  artifactKey: Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock4.prefab using Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '963b807d1c14e051927621670b33ecac') in 0.004871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock2.prefab
+  artifactKey: Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock2.prefab using Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '8941bafe4bc841d6b7fe3b3ead3ec6f1') in 0.004408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock3.prefab
+  artifactKey: Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock3.prefab using Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '1f87066ab7c9ef6760e9492a58768424') in 0.004529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock1.prefab
+  artifactKey: Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock1.prefab using Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '67267c6831b9c9122565e3d5687372e4') in 0.004534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock3.prefab
+  artifactKey: Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock3.prefab using Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab from editor
+Resuming Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000) -> c218f89d256a89626b0fe5f9539b16a3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab from editor
+Resuming Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000) -> c218f89d256a89626b0fe5f9539b16a3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'c050725253c13a94cf29e68864c7eff3') in 0.004260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock4.prefab
+  artifactKey: Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock4.prefab using Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock4.prefab from editor
+Resuming Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000) -> 8a15a5f656a6b38cd094d74ff0f46ac2 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock4.prefab from editor
+Resuming Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000) -> 8a15a5f656a6b38cd094d74ff0f46ac2 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'a4f4f18db8de540067035619d295a406') in 0.004168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock4.prefab
+  artifactKey: Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock4.prefab using Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock4.prefab from editor
+Resuming Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000) -> aba8527673dca0a2fb6476e34bff4e21 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock4.prefab from editor
+Resuming Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000) -> aba8527673dca0a2fb6476e34bff4e21 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '364e1de9412e77462f26643df8d95f1c') in 0.004864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock3.prefab
+  artifactKey: Guid(a33e8722d49877f49acc0e9529550317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock3.prefab using Guid(a33e8722d49877f49acc0e9529550317) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock3.prefab from editor
+Resuming Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000) -> b4fb2791465ded46cc5dba49e409e10f 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock3.prefab from editor
+Resuming Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000) -> b4fb2791465ded46cc5dba49e409e10f 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'd4e2fb5b2704d39d27dcf7fe27d643d5') in 0.003969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock2.prefab
+  artifactKey: Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock2.prefab using Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock2.prefab from editor
+Resuming Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000) -> 0bde746199ab479c44e21eca80c0dd70 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock2.prefab from editor
+Resuming Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000) -> 0bde746199ab479c44e21eca80c0dd70 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'fcb9705d3dea8adde2b2114c5864f855') in 0.004330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock2.prefab
+  artifactKey: Guid(e70f6682f993f11409d4e055af6c1041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock2.prefab using Guid(e70f6682f993f11409d4e055af6c1041) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock2.prefab from editor
+Resuming Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000) -> a730d478576807d59f50214609217ae3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock2.prefab from editor
+Resuming Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000) -> a730d478576807d59f50214609217ae3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '69d4a956b449d7d83c9ad92cdb388d6e') in 0.004202 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock1.prefab
+  artifactKey: Guid(a17737aba651a1640b537220d009734c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock1.prefab using Guid(a17737aba651a1640b537220d009734c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock1.prefab from editor
+Resuming Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000) -> 22d26374bef81fb8a6251ed61ab1cfe7 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock1.prefab from editor
+Resuming Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000) -> 22d26374bef81fb8a6251ed61ab1cfe7 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '63e77e6aee4bc713ee0cd5c98ba7aee0') in 0.004422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.356166 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock1.prefab
+  artifactKey: Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock1.prefab using Guid(922047c5055b57447acdb89e12a1f22c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock1.prefab from editor
+Resuming Guid(922047c5055b57447acdb89e12a1f22c) Importer(-1,00000000000000000000000000000000) -> 54962ee2066c5a823d469f595f7f6b1e 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '4926d004e71ebea7cbce2169f97da1d7') in 0.004575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock4.prefab
+  artifactKey: Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock4.prefab using Guid(655383c0e536d50469f55d0c97588139) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock4.prefab from editor
+Resuming Guid(655383c0e536d50469f55d0c97588139) Importer(-1,00000000000000000000000000000000) -> 0e33db7b1b0976aeb67da008e95b9958 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '963b807d1c14e051927621670b33ecac') in 0.004842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock2.prefab
+  artifactKey: Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock2.prefab using Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock2.prefab from editor
+Resuming Guid(3a13037b316a2ed4494e33dca59aa0e5) Importer(-1,00000000000000000000000000000000) -> 2e35c20f6cf0b928b9ee411fade90e22 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '8941bafe4bc841d6b7fe3b3ead3ec6f1') in 0.004137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock3.prefab
+  artifactKey: Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock3.prefab using Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock3.prefab from editor
+Resuming Guid(5310a7daed44f0e43813b41ff419fdb9) Importer(-1,00000000000000000000000000000000) -> e57efa00d2b78d1f6e859236ce8a9919 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '1f87066ab7c9ef6760e9492a58768424') in 0.004638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock1.prefab
+  artifactKey: Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock1.prefab using Guid(a541d36fbbccbf946b097de48970569b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock1.prefab from editor
+Resuming Guid(a541d36fbbccbf946b097de48970569b) Importer(-1,00000000000000000000000000000000) -> 7062b66f7a1059e317434f48bad033d0 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '67267c6831b9c9122565e3d5687372e4') in 0.004465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock3.prefab
+  artifactKey: Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock3.prefab using Guid(fb779f25dcae78e448d7cedb0e278792) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab from editor
+Resuming Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000) -> c218f89d256a89626b0fe5f9539b16a3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock3.prefab from editor
+Resuming Guid(fb779f25dcae78e448d7cedb0e278792) Importer(-1,00000000000000000000000000000000) -> c218f89d256a89626b0fe5f9539b16a3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'c050725253c13a94cf29e68864c7eff3') in 0.004527 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000368 seconds.
+  path: Assets/Prefabs/Rocks/VenusRock4.prefab
+  artifactKey: Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/VenusRock4.prefab using Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock4.prefab from editor
+Resuming Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000) -> 8a15a5f656a6b38cd094d74ff0f46ac2 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/VenusRock4.prefab from editor
+Resuming Guid(aed3c8e8d9b6ccd4e8fa6081fab3911a) Importer(-1,00000000000000000000000000000000) -> 8a15a5f656a6b38cd094d74ff0f46ac2 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'a4f4f18db8de540067035619d295a406') in 0.004700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock4.prefab
+  artifactKey: Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock4.prefab using Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock4.prefab from editor
+Resuming Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000) -> aba8527673dca0a2fb6476e34bff4e21 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock4.prefab from editor
+Resuming Guid(95053eaae68993945b0e2c87f2d7c52b) Importer(-1,00000000000000000000000000000000) -> aba8527673dca0a2fb6476e34bff4e21 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '364e1de9412e77462f26643df8d95f1c') in 0.004450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock3.prefab
+  artifactKey: Guid(a33e8722d49877f49acc0e9529550317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock3.prefab using Guid(a33e8722d49877f49acc0e9529550317) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock3.prefab from editor
+Resuming Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000) -> b4fb2791465ded46cc5dba49e409e10f 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock3.prefab from editor
+Resuming Guid(a33e8722d49877f49acc0e9529550317) Importer(-1,00000000000000000000000000000000) -> b4fb2791465ded46cc5dba49e409e10f 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'd4e2fb5b2704d39d27dcf7fe27d643d5') in 0.004758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock2.prefab
+  artifactKey: Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock2.prefab using Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock2.prefab from editor
+Resuming Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000) -> 0bde746199ab479c44e21eca80c0dd70 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock2.prefab from editor
+Resuming Guid(3ff06f2066048d1458cfca3c3a14d8c2) Importer(-1,00000000000000000000000000000000) -> 0bde746199ab479c44e21eca80c0dd70 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: 'fcb9705d3dea8adde2b2114c5864f855') in 0.004124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Prefabs/Rocks/EarthRock2.prefab
+  artifactKey: Guid(e70f6682f993f11409d4e055af6c1041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/EarthRock2.prefab using Guid(e70f6682f993f11409d4e055af6c1041) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock2.prefab from editor
+Resuming Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000) -> a730d478576807d59f50214609217ae3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/EarthRock2.prefab from editor
+Resuming Guid(e70f6682f993f11409d4e055af6c1041) Importer(-1,00000000000000000000000000000000) -> a730d478576807d59f50214609217ae3 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '69d4a956b449d7d83c9ad92cdb388d6e') in 0.005089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Prefabs/Rocks/MoonRock1.prefab
+  artifactKey: Guid(a17737aba651a1640b537220d009734c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Rocks/MoonRock1.prefab using Guid(a17737aba651a1640b537220d009734c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0193700 (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock1.prefab from editor
+Resuming Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000) -> 22d26374bef81fb8a6251ed61ab1cfe7 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+Diagnostics callstack to track who triggered the sub-import:
+0x00007ff6a01a9152 (Unity) ImporterAssetResolver::ResolveAsset
+0x00007ff6a017b9a2 (Unity) ResolveArtifactV2
+0x00007ff6a0173d11 (Unity) ProduceArtifactV2
+0x00007ff6a010e0ae (Unity) AssetDatabase::ProduceArtifact
+0x00007ff6a00f8f38 (Unity) PreviewImporter::GenerateAssetData
+0x00007ff6a0193a1e (Unity) ImportToObjects
+0x00007ff6a0192a18 (Unity) ImportAsset
+0x00007ff6a013101f (Unity) AssetImportWorker::Import
+0x00007ff6a01540d2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff6a01da8b2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6a01dcb20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6a01e020e (Unity) asio::io_service::run
+0x00007ff6a017c6ea (Unity) RunAssetImportWorkerClientV2
+0x00007ff6a017c740 (Unity) RunAssetImporterV2
+0x00007ff69fc7d2b7 (Unity) Application::InitializeProject
+0x00007ff6a008f007 (Unity) WinMain
+0x00007ff6a1bf6332 (Unity) __scrt_common_main_seh
+0x00007ffb57867034 (KERNEL32) BaseThreadInitThunk
+0x00007ffb57f22651 (ntdll) RtlUserThreadStart
+
+Requesting import of Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000), Assets/Prefabs/Rocks/MoonRock1.prefab from editor
+Resuming Guid(a17737aba651a1640b537220d009734c) Importer(-1,00000000000000000000000000000000) -> 22d26374bef81fb8a6251ed61ab1cfe7 
+Assertion failed on expression: 'state.state == kUpToDate'
+Assertion failed on expression: 'state.artifactID == result'
+ -> (artifact id: '63e77e6aee4bc713ee0cd5c98ba7aee0') in 0.004231 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005070 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Domain Reload Profiling:
+	ReloadAssembly (961ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (804ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (291ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (312ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (249ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(20) subTarget(589825) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2960 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 199.0 MB.
+System memory in use after: 199.3 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3736.
+Total: 2.681200 ms (FindLiveObjects: 0.220400 ms CreateObjectMapping: 0.125400 ms MarkObjects: 2.320700 ms  DeleteObjects: 0.013500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004756 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.016 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1016ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (843ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (325ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (317ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (49ms)
+				ProcessInitializeOnLoadAttributes (252ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Callback registration failed. Increase kMaxCallback.
+Fatal Error! Callback registration failed. Increase kMaxCallback.
+Crash!!!
+SymInit: Symbol-SearchPath: '.;C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal;C:\Users\aaron\Desktop\University\4. Fourth Year\Portfolio\Portal\Library\BurstCache\JIT;C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 534, UserName: 'aaron'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Unity.exe:Unity.exe (00007FF69E9D0000), size: 81817600 (result: 0), SymType: 'PDB', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Unity_x64.pdb', fileVersion: 2021.1.18.48579
+C:\Windows\SYSTEM32\ntdll.dll:ntdll.dll (00007FFB57ED0000), size: 2052096 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ntdll.dll', fileVersion: 10.0.19041.1566
+C:\Program Files\Avast Software\Avast\aswhook.dll:aswhook.dll (00007FFB26E40000), size: 90112 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Program Files\Avast Software\Avast\aswhook.dll', fileVersion: 22.3.7108.0
+C:\Windows\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFB57850000), size: 778240 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNEL32.DLL', fileVersion: 10.0.19041.1645
+C:\Windows\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFB55620000), size: 2916352 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNELBASE.dll', fileVersion: 10.0.19041.1645
+C:\Windows\System32\CRYPT32.dll:CRYPT32.dll (00007FFB558F0000), size: 1400832 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\CRYPT32.dll', fileVersion: 10.0.19041.1320
+C:\Windows\System32\ucrtbase.dll:ucrtbase.dll (00007FFB55B60000), size: 1048576 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ucrtbase.dll', fileVersion: 10.0.19041.789
+C:\Windows\System32\USER32.dll:USER32.dll (00007FFB55FC0000), size: 1703936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\USER32.dll', fileVersion: 10.0.19041.1503
+C:\Windows\System32\win32u.dll:win32u.dll (00007FFB55CF0000), size: 139264 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\win32u.dll', fileVersion: 10.0.19041.1645
+C:\Windows\System32\GDI32.dll:GDI32.dll (00007FFB55F30000), size: 172032 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\GDI32.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\gdi32full.dll:gdi32full.dll (00007FFB55D70000), size: 1093632 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\gdi32full.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\msvcp_win.dll:msvcp_win.dll (00007FFB55AC0000), size: 643072 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcp_win.dll', fileVersion: 10.0.19041.789
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFA93CA0000), size: 10215424 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\libfbxsdk.dll', fileVersion: 2020.2.0.0
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenImageDenoise.dll:OpenImageDenoise.dll (00007FFA912D0000), size: 43806720 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenImageDenoise.dll'
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\optix.6.0.0.dll:optix.6.0.0.dll (00007FFB18A70000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\optix.6.0.0.dll', fileVersion: 6.0.0.0
+C:\Windows\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFB57060000), size: 712704 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ADVAPI32.dll', fileVersion: 10.0.19041.1466
+C:\Windows\System32\msvcrt.dll:msvcrt.dll (00007FFB567A0000), size: 647168 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcrt.dll', fileVersion: 7.0.19041.546
+C:\Windows\System32\sechost.dll:sechost.dll (00007FFB56500000), size: 638976 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\sechost.dll', fileVersion: 10.0.19041.1586
+C:\Windows\System32\RPCRT4.dll:RPCRT4.dll (00007FFB575F0000), size: 1200128 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\RPCRT4.dll', fileVersion: 10.0.19041.1645
+C:\Windows\System32\SHELL32.dll:SHELL32.dll (00007FFB56840000), size: 7618560 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SHELL32.dll', fileVersion: 10.0.19041.1566
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\etccompress.dll:etccompress.dll (00007FFA94D80000), size: 5066752 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\etccompress.dll'
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 6414336 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\FreeImage.dll', fileVersion: 3.18.0.0
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFA977F0000), size: 1306624 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\umbraoptimizer64.dll'
+C:\Windows\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFB55F60000), size: 348160 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SHLWAPI.dll', fileVersion: 10.0.19041.1023
+C:\Windows\System32\WS2_32.dll:WS2_32.dll (00007FFB56490000), size: 438272 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\WS2_32.dll', fileVersion: 10.0.19041.546
+C:\Windows\System32\ole32.dll:ole32.dll (00007FFB57140000), size: 1220608 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ole32.dll', fileVersion: 10.0.19041.1202
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFA97640000), size: 1744896 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\ispc_texcomp.dll'
+C:\Windows\System32\WLDAP32.dll:WLDAP32.dll (00007FFB57000000), size: 352256 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\WLDAP32.dll', fileVersion: 10.0.19041.546
+C:\Windows\System32\combase.dll:combase.dll (00007FFB57290000), size: 3489792 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\combase.dll', fileVersion: 10.0.19041.1566
+C:\Windows\System32\Normaliz.dll:Normaliz.dll (00007FFB56F90000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Normaliz.dll', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFB50B20000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\WinPixEventRuntime.dll', fileVersion: 1.0.1812.6001
+C:\Windows\System32\IMM32.dll:IMM32.dll (00007FFB57110000), size: 196608 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IMM32.dll', fileVersion: 10.0.19041.546
+C:\Windows\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFB57910000), size: 4628480 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SETUPAPI.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFB55D20000), size: 319488 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\cfgmgr32.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\bcrypt.dll:bcrypt.dll (00007FFB555F0000), size: 159744 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\bcrypt.dll', fileVersion: 10.0.19041.1023
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\tbb.dll:tbb.dll (00007FFB16DF0000), size: 413696 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\tbb.dll', fileVersion: 2017.0.2016.1004
+C:\Windows\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFB563C0000), size: 839680 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\OLEAUT32.dll', fileVersion: 10.0.19041.985
+C:\Windows\System32\WINTRUST.dll:WINTRUST.dll (00007FFB55A50000), size: 425984 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\WINTRUST.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFB3ABD0000), size: 110592 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VCRUNTIME140.dll', fileVersion: 14.29.30135.0
+C:\Windows\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFA9ACB0000), size: 1204224 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\OPENGL32.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\GLU32.dll:GLU32.dll (00007FFB07C70000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\GLU32.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFB54A60000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\IPHLPAPI.DLL', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFB3ABF0000), size: 577536 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCP140.dll', fileVersion: 14.29.30135.0
+C:\Windows\SYSTEM32\MSVCR120.dll:MSVCR120.dll (00007FFA972F0000), size: 978944 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCR120.dll', fileVersion: 12.0.40649.5
+C:\Windows\SYSTEM32\MSVCP120.dll:MSVCP120.dll (00007FFA97590000), size: 679936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCP120.dll', fileVersion: 12.0.40649.5
+C:\Windows\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFB4FD60000), size: 1089536 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WINHTTP.dll', fileVersion: 10.0.19041.1620
+C:\Windows\SYSTEM32\WINMM.dll:WINMM.dll (00007FFB49C40000), size: 159744 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WINMM.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\HID.DLL:HID.DLL (00007FFB53ED0000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\HID.DLL', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\RadeonImageFilters.dll:RadeonImageFilters.dll (00007FFA96C30000), size: 2535424 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\RadeonImageFilters.dll', fileVersion: 1.5.1.0
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFA90A40000), size: 8978432 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\SketchUpAPI.dll', fileVersion: 19.0.753.0
+C:\Windows\SYSTEM32\VERSION.dll:VERSION.dll (00007FFB50A80000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VERSION.dll', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFB18280000), size: 483328 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\SketchUpCommonPreferences.dll', fileVersion: 19.0.753.20342
+C:\Windows\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFB3A440000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VCRUNTIME140_1.dll', fileVersion: 14.29.30135.0
+C:\Windows\SYSTEM32\Secur32.dll:Secur32.dll (00007FFB41250000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\Secur32.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (00007FFB54DC0000), size: 434176 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSWSOCK.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFB554E0000), size: 204800 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\SSPICLI.DLL', fileVersion: 10.0.19041.1586
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenRL.dll:OpenRL.dll (0000012B97310000), size: 12779520 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenRL.dll', fileVersion: 1.5.0.2907
+C:\Windows\SYSTEM32\MSVCP100.dll:MSVCP100.dll (0000000065780000), size: 622592 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCP100.dll', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\embree.dll:embree.dll (00007FFA8FA50000), size: 16711680 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\embree.dll', fileVersion: 2.14.0.0
+C:\Windows\SYSTEM32\MSVCR100.dll:MSVCR100.dll (0000000065820000), size: 860160 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCR100.dll', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (0000012B97F60000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\OpenRL_pthread.dll', fileVersion: 2.9.0.0
+C:\Windows\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFB551E0000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSASN1.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFB53530000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\kernel.appcore.dll', fileVersion: 10.0.19041.546
+C:\Windows\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFB55C60000), size: 532480 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\bcryptPrimitives.dll', fileVersion: 10.0.19041.1415
+C:\Windows\system32\uxtheme.dll:uxtheme.dll (00007FFB53050000), size: 647168 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\uxtheme.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\shcore.dll:shcore.dll (00007FFB565A0000), size: 708608 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\shcore.dll', fileVersion: 10.0.19041.1645
+C:\Windows\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFB53730000), size: 7946240 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\windows.storage.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\Wldp.dll:Wldp.dll (00007FFB55060000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\Wldp.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\profapi.dll:profapi.dll (00007FFB55530000), size: 126976 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\SYSTEM32\profapi.dll', fileVersion: 10.0.19041.844
+C:\Windows\System32\clbcatq.dll:clbcatq.dll (00007FFB56160000), size: 692224 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\clbcatq.dll', fileVersion: 2001.12.10941.16384
+C:\Windows\System32\netprofm.dll:netprofm.dll (00007FFB51460000), size: 253952 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\netprofm.dll', fileVersion: 10.0.19041.906
+C:\Windows\System32\npmproxy.dll:npmproxy.dll (00007FFB4FEE0000), size: 65536 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\npmproxy.dll', fileVersion: 10.0.19041.906
+C:\Windows\System32\NSI.dll:NSI.dll (00007FFB56730000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\NSI.dll', fileVersion: 10.0.19041.610
+C:\Windows\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFB50D90000), size: 94208 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFB50D70000), size: 118784 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dhcpcsvc.DLL', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFB54AA0000), size: 831488 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\DNSAPI.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFB4F0C0000), size: 520192 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\fwpuclnt.dll', fileVersion: 10.0.19041.1620
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFB4FEA0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\rasadhlp.dll', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFA97260000), size: 552960 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Data\Tools\astcenc-avx2.dll'
+C:\Windows\SYSTEM32\d3d11.dll:d3d11.dll (00007FFB51CA0000), size: 2506752 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\d3d11.dll', fileVersion: 10.0.19041.1620
+C:\Windows\SYSTEM32\dxgi.dll:dxgi.dll (00007FFB53F10000), size: 995328 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dxgi.dll', fileVersion: 10.0.19041.1566
+C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_0bc9105c62ca22fb\nvldumdx.dll:nvldumdx.dll (00007FFB49F50000), size: 1073152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_0bc9105c62ca22fb\nvldumdx.dll', fileVersion: 30.0.14.9729
+C:\Windows\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFB509F0000), size: 200704 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\cryptnet.dll', fileVersion: 10.0.19041.906
+C:\Windows\SYSTEM32\drvstore.dll:drvstore.dll (00007FFB4E5E0000), size: 1343488 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\drvstore.dll', fileVersion: 10.0.19041.1566
+C:\Windows\SYSTEM32\devobj.dll:devobj.dll (00007FFB553A0000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\devobj.dll', fileVersion: 10.0.19041.1620
+C:\Windows\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFB54FD0000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\cryptbase.dll', fileVersion: 10.0.19041.546
+C:\Windows\System32\imagehlp.dll:imagehlp.dll (00007FFB57270000), size: 118784 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\imagehlp.dll', fileVersion: 10.0.19041.1415
+C:\Windows\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFB54FB0000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\CRYPTSP.dll', fileVersion: 10.0.19041.546
+C:\Windows\system32\rsaenh.dll:rsaenh.dll (00007FFB546D0000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\rsaenh.dll', fileVersion: 10.0.19041.1052
+C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_0bc9105c62ca22fb\nvwgf2umx.dll:nvwgf2umx.dll (00007FFB09F80000), size: 43167744 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_0bc9105c62ca22fb\nvwgf2umx.dll', fileVersion: 30.0.14.9729
+C:\Windows\system32\nvspcap64.dll:nvspcap64.dll (00007FFAA19A0000), size: 2904064 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\nvspcap64.dll', fileVersion: 3.24.0.126
+C:\Windows\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFB54300000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ntmarta.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dxcore.dll:dxcore.dll (00007FFB4A060000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dxcore.dll', fileVersion: 10.0.19041.546
+C:\Windows\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFB4FFA0000), size: 69632 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\wbem\wbemprox.dll', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFB4C250000), size: 589824 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\wbemcomn.dll', fileVersion: 10.0.19041.1566
+C:\Windows\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFB4BDF0000), size: 81920 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\wbem\wbemsvc.dll', fileVersion: 10.0.19041.1320
+C:\Windows\system32\wbem\fastprox.dll:fastprox.dll (00007FFB4BE10000), size: 1093632 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\wbem\fastprox.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\amsi.dll:amsi.dll (00007FFB4BD00000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\amsi.dll', fileVersion: 10.0.19041.1620
+C:\Windows\SYSTEM32\USERENV.dll:USERENV.dll (00007FFB554B0000), size: 188416 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\USERENV.dll', fileVersion: 10.0.19041.572
+C:\Program Files\Avast Software\Avast\aswAMSI.dll:aswAMSI.dll (00007FFB4BB40000), size: 1822720 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Avast Software\Avast\aswAMSI.dll', fileVersion: 22.3.7108.0
+C:\Windows\SYSTEM32\POWRPROF.dll:POWRPROF.dll (00007FFB54B70000), size: 307200 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\POWRPROF.dll', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFB54A40000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\UMPDC.dll'
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\cudart64_90.dll:cudart64_90.dll (00007FFA96BC0000), size: 397312 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\cudart64_90.dll', fileVersion: 6.14.11.9000
+C:\Windows\SYSTEM32\opencl.dll:opencl.dll (00007FFA94C10000), size: 1474560 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\opencl.dll', fileVersion: 3.0.1.0
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\radeonrays.dll:radeonrays.dll (00007FFA96B30000), size: 552960 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\radeonrays.dll'
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFA8EA90000), size: 7790592 (result: 0), SymType: 'PDB', PDB: 'C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\mono-2.0-bdwgc.pdb'
+C:\Windows\System32\PSAPI.DLL:PSAPI.DLL (00007FFB57720000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\PSAPI.DLL', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFB50030000), size: 1007616 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\PROPSYS.dll', fileVersion: 7.0.19041.1023
+C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll:comctl32.dll (00007FFB37990000), size: 2727936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll', fileVersion: 6.10.19041.1110
+C:\Windows\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFB4B370000), size: 1785856 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WindowsCodecs.dll', fileVersion: 10.0.19041.1151
+C:\Windows\System32\thumbcache.dll:thumbcache.dll (00007FFB1DB70000), size: 417792 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\thumbcache.dll', fileVersion: 10.0.19041.1151
+C:\Windows\System32\MrmCoreR.dll:MrmCoreR.dll (00007FFB49720000), size: 999424 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MrmCoreR.dll', fileVersion: 10.0.19041.1566
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFB47B40000), size: 2822144 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\iertutil.dll', fileVersion: 11.0.19041.1586
+C:\Windows\SYSTEM32\windows.staterepositorycore.dll:windows.staterepositorycore.dll (00007FFB4BD20000), size: 69632 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\windows.staterepositorycore.dll', fileVersion: 10.0.19041.1466
+C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFB4E280000), size: 1982464 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dbghelp.dll', fileVersion: 10.0.19041.867
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFB55654F69 (KERNELBASE) RaiseException
+0x00007FF69FB6FDFC (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF69FB706CD (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF6A0FBABA8 (Unity) DebugStringToFilePostprocessedStacktrace
+0x00007FF6A0FBA39B (Unity) DebugStringToFile
+0x00007FF69FF46B31 (Unity) LoadDomainAndUserAssemblies
+0x00007FF69FF46E4C (Unity) LoadUserAssemblies
+0x00007FF6A01539B8 (Unity) <lambda_15c8da1c90a30e86cd2096f929d4dd2f>::operator()
+0x00007FF6A01DA8B2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007FF6A01DCB20 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007FF6A01E020E (Unity) asio::io_service::run
+0x00007FF6A017C6EA (Unity) RunAssetImportWorkerClientV2
+0x00007FF6A017C740 (Unity) RunAssetImporterV2
+0x00007FF69FC7D2B7 (Unity) Application::InitializeProject
+0x00007FF6A008F007 (Unity) WinMain
+0x00007FF6A1BF6332 (Unity) __scrt_common_main_seh
+0x00007FFB57867034 (KERNEL32) BaseThreadInitThunk
+0x00007FFB57F22651 (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/aaron/AppData/Local/Temp/Unity/Editor/Crashes
