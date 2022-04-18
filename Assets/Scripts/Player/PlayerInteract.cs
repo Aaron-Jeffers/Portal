@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using SoundTest;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -18,11 +20,11 @@ public class PlayerInteract : MonoBehaviour
     string playerLocation;
     PortalManager portalManager;
 
-    AudioManager audioManager;
+    public SoundManager audioManager;
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<SoundManager>();
         highlightObj = placeholderHighlightObject;
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();
@@ -60,18 +62,21 @@ public class PlayerInteract : MonoBehaviour
                     break;
                 case "button":
                     UpdatePortalAddress(obj.gameObject);
+                    audioManager.metalJumpVolume = 0;
                     audioManager.jumpVolume = 0;
+
                     if(playerLocation == "moon")
                     {
+                        StartCoroutine(ChangeVolume(0.1f));
                         return;
                     }
-                    if(playerLocation == "earth")
+                    else if(playerLocation == "earth")
                     {
-                        audioManager.PlayCollisionAudio(1, 1, audioManager.clickVolume, audioManager.earthPitch, audioManager.click);
+                        audioManager.PlayClickAudio(1, 1, audioManager.clickVolume, audioManager.earthPitch, audioManager.click);
                     }
                     else if (playerLocation == "venus")
                     {
-                        audioManager.PlayCollisionAudio(1, 1, audioManager.clickVolume, audioManager.venusPitch, audioManager.click);
+                        audioManager.PlayClickAudio(1, 1, audioManager.clickVolume, audioManager.venusPitch, audioManager.click);
                     }
 
                     StartCoroutine(ChangeVolume(0.1f));
@@ -250,6 +255,7 @@ public class PlayerInteract : MonoBehaviour
     IEnumerator ChangeVolume(float time)
     {
         yield return new WaitForSeconds(time);
-        audioManager.jumpVolume = 0.6f;
+        audioManager.metalJumpVolume = 0.3f;
+        audioManager.jumpVolume = 0.3f;
     }
 }

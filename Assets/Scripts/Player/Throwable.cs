@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using SoundTest;
 
 public class Throwable : EventHorizonTransition
 {
@@ -11,15 +13,18 @@ public class Throwable : EventHorizonTransition
     float gravity;
 
     //Audio
-    AudioManager audioManager;
+    public SoundManager audioManager;
     PlayerController player;
     public string environment;
     float audioDelay = -2f, delayLimit = 0.1f;
 
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<SoundManager>();
+    }
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        audioManager = FindObjectOfType<AudioManager>();
+        player = FindObjectOfType<PlayerController>();        
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
     }

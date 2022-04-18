@@ -323,6 +323,7 @@
 "Assets/Scripts/Miscellaneous/RockSpawner.cs"
 "Assets/Scripts/Miscellaneous/RotateWorldModels.cs"
 "Assets/Scripts/Miscellaneous/Scene.cs"
+"Assets/Scripts/Miscellaneous/SoundManager.cs"
 "Assets/Scripts/Miscellaneous/UI.cs"
 "Assets/Scripts/Player/FirstPersonCamera.cs"
 "Assets/Scripts/Player/Interactable.cs"

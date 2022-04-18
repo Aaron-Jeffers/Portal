@@ -3930,6 +3930,7 @@ MonoBehaviour:
   pitchMax: 60
   smoothTimeRot: 0.2
   playerLocation: 
+  audioManager: {fileID: 0}
 --- !u!54 &231990215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4042,6 +4043,7 @@ MonoBehaviour:
   throwForce: 300000
   grabDistance: 10
   grabbedObjectOffset: {x: 1.5, y: 0.5, z: 1.5}
+  audioManager: {fileID: 967638080}
 --- !u!4 &232255184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6019458102904150364, guid: aed3c8e8d9b6ccd4e8fa6081fab3911a, type: 3}
@@ -7545,6 +7547,10 @@ PrefabInstance:
     - target: {fileID: 4732475363628679374, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: endPortalWorldSpace
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662148721039790554, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: m_Name
+      value: 'Base2 '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
@@ -17362,6 +17368,7 @@ GameObject:
   - component: {fileID: 967638081}
   - component: {fileID: 967638080}
   - component: {fileID: 967638082}
+  - component: {fileID: 967638084}
   - component: {fileID: 967638083}
   m_Layer: 0
   m_Name: AudioManager
@@ -17386,6 +17393,7 @@ MonoBehaviour:
   metalVolume: 2
   clickVolume: 0.6
   jumpVolume: 0.6
+  metalJumpVolume: 0.3
   moonJumpVolume: 1
   ambientEarthVolume: 0.5
   ambientMoonVolume: 0.25
@@ -17394,10 +17402,12 @@ MonoBehaviour:
   moonPitch: 1
   venusPitch: 0.5
   audioSourceNoise: {fileID: 967638082}
+  audioSourceClick: {fileID: 967638084}
   audioSourceAmbient: {fileID: 967638083}
   thud: {fileID: 8300000, guid: 646dbc2cfdb5b184c96203a34a3c7de0, type: 3}
   jump: {fileID: 8300000, guid: 646dbc2cfdb5b184c96203a34a3c7de0, type: 3}
   moonJump: {fileID: 8300000, guid: 3b7ac1b4b7e1e4b45b70daafacb498b2, type: 3}
+  metalJump: {fileID: 8300000, guid: 086720f941553184b9f6323e9412013a, type: 3}
   metal: {fileID: 8300000, guid: 3dbbab8bd9bc8a8449324646859a319d, type: 3}
   earthAmbient: {fileID: 8300000, guid: 570d81a8771b0b046b00c50bcff66432, type: 3}
   moonAmbient: {fileID: 8300000, guid: e5295e93adcf99a4ca42de7e64f4a815, type: 3}
@@ -17528,6 +17538,102 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &967638084
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967638079}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -23080,6 +23186,10 @@ PrefabInstance:
       propertyPath: endPortal
       value: 
       objectReference: {fileID: 264299304}
+    - target: {fileID: 7662148721039790554, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: m_Name
+      value: Base2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
 --- !u!4 &1303426240 stripped
@@ -38263,9 +38373,17 @@ PrefabInstance:
       propertyPath: endPortalWorldSpace
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4732475363447470838, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: m_TagString
+      value: portal
+      objectReference: {fileID: 0}
     - target: {fileID: 4732475363628679362, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_Name
       value: Earth2Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732475363628679362, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4732475363628679374, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: endPortal
@@ -38274,6 +38392,10 @@ PrefabInstance:
     - target: {fileID: 4732475363628679374, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: endPortalWorldSpace
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662148721039790554, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: m_Name
+      value: Base2
       objectReference: {fileID: 0}
     - target: {fileID: 8283064918966858028, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -38421,6 +38543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15570fa8a62556046844d31803274eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   environment: 
 --- !u!23 &6855643432418384721
 MeshRenderer:

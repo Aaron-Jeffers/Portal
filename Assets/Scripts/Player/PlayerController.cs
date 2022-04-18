@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoundTest;
 
 public class PlayerController : EventHorizonTransition
 {
@@ -36,12 +37,16 @@ public class PlayerController : EventHorizonTransition
     public string playerLocation = "earth";
 
     //Audio
-    AudioManager audioManager;
+    public SoundManager audioManager;
     float audioLimit = 0.25f, audioTimer;
 
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<SoundManager>();
+    }
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        //audioManager = FindObjectOfType<AudioManager>();
         playerCam = GetComponentInChildren<Camera>();
         sprintSpeed = walkSpeed * sprintMultiplier;
         rb = GetComponent<Rigidbody>();
@@ -107,26 +112,49 @@ public class PlayerController : EventHorizonTransition
 
     private void OnCollisionEnter(Collision collision)
     {
+        AudioClip jump = audioManager.jump;
+        float jumpVolume = audioManager.jumpVolume;
+
         switch (collision.collider.tag.ToString())
         {
             case "ground":
                 isGrounded = true;
-                if(audioTimer < audioLimit)
+                if(collision.collider.name == "Base"  || collision.collider.name == "Base2")
+                {
+                    jump = audioManager.metalJump;
+                    jumpVolume = audioManager.metalJumpVolume;
+                }
+                if(audioTimer < audioLimit || collision.relativeVelocity.y < 2)
                 {
                     return;
                 }
-                if(playerLocation == "earth")
+                switch (playerLocation)
                 {
-                    audioManager.PlayCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.earthPitch, audioManager.jump);
+                    case "earth":
+                        audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
+                        break;
+                    case "venus":
+                        audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
+                        break;
+                    case "moon":
+                        audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                        break;
+                    default:
+                        break;
                 }
-                if (playerLocation == "venus")
-                {
-                    audioManager.PlayCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.venusPitch, audioManager.jump);
-                }
-                if (playerLocation == "moon")
-                {
-                    audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                }
+
+                //if (playerLocation == "earth")
+                //{
+                //    audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
+                //}
+                //if (playerLocation == "venus")
+                //{
+                //    audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
+                //}
+                //if (playerLocation == "moon")
+                //{
+                //    audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                //}
                 break;
         }
     }
