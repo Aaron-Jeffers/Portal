@@ -60,6 +60,7 @@ public class PlayerInteract : MonoBehaviour
                     break;
                 case "button":
                     UpdatePortalAddress(obj.gameObject);
+                    audioManager.jumpVolume = 0;
                     if(playerLocation == "moon")
                     {
                         return;
@@ -72,6 +73,8 @@ public class PlayerInteract : MonoBehaviour
                     {
                         audioManager.PlayCollisionAudio(1, 1, audioManager.clickVolume, audioManager.venusPitch, audioManager.click);
                     }
+
+                    StartCoroutine(ChangeVolume(0.1f));
                     
                     break;
                 default:
@@ -242,5 +245,11 @@ public class PlayerInteract : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    IEnumerator ChangeVolume(float time)
+    {
+        yield return new WaitForSeconds(time);
+        audioManager.jumpVolume = 0.6f;
     }
 }

@@ -17385,7 +17385,7 @@ MonoBehaviour:
   thudVolume: 2.5
   metalVolume: 2
   clickVolume: 0.6
-  jumpVolume: 1
+  jumpVolume: 0.6
   moonJumpVolume: 1
   ambientEarthVolume: 0.5
   ambientMoonVolume: 0.25

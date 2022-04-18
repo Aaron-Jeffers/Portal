@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     public void PlayCollisionAudio(float magnitude, float dist, float volume,float pitch, AudioClip clip)
     {
         
-        audioSourceNoise.clip = clip;
+        audioSourceNoise.clip = null;
         audioSourceNoise.playOnAwake = false;
         audioSourceNoise.volume = magnitude * volume / (dist * dist);
         audioSourceNoise.pitch = pitch;
