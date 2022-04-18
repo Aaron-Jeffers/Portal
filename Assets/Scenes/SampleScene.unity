@@ -17384,6 +17384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thudVolume: 2.5
   metalVolume: 2
+  clickVolume: 0.6
+  jumpVolume: 1
+  moonJumpVolume: 1
   ambientEarthVolume: 0.5
   ambientMoonVolume: 0.25
   ambientVenusVolume: 1
@@ -17393,10 +17396,13 @@ MonoBehaviour:
   audioSourceNoise: {fileID: 967638082}
   audioSourceAmbient: {fileID: 967638083}
   thud: {fileID: 8300000, guid: 646dbc2cfdb5b184c96203a34a3c7de0, type: 3}
+  jump: {fileID: 8300000, guid: 646dbc2cfdb5b184c96203a34a3c7de0, type: 3}
+  moonJump: {fileID: 8300000, guid: 3b7ac1b4b7e1e4b45b70daafacb498b2, type: 3}
   metal: {fileID: 8300000, guid: 3dbbab8bd9bc8a8449324646859a319d, type: 3}
   earthAmbient: {fileID: 8300000, guid: 570d81a8771b0b046b00c50bcff66432, type: 3}
-  moonAmbient: {fileID: 8300000, guid: 985f0414e6a34fa429802a7cd943b916, type: 3}
+  moonAmbient: {fileID: 8300000, guid: e5295e93adcf99a4ca42de7e64f4a815, type: 3}
   venusAmbient: {fileID: 8300000, guid: aa58f5ec3f7d072498409eda52d47ee7, type: 3}
+  click: {fileID: 8300000, guid: 0c90bd9be04c8754eb1a0f6f9e6897e7, type: 3}
 --- !u!4 &967638081
 Transform:
   m_ObjectHideFlags: 0

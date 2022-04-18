@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public float thudVolume, metalVolume, ambientEarthVolume, ambientMoonVolume, ambientVenusVolume;
+    public float thudVolume, metalVolume, clickVolume, jumpVolume, moonJumpVolume, ambientEarthVolume, ambientMoonVolume, ambientVenusVolume;
     public float earthPitch, moonPitch, venusPitch;
     public AudioSource audioSourceNoise;
     public AudioSource audioSourceAmbient;
 
-    public AudioClip thud, metal, earthAmbient, moonAmbient, venusAmbient;
+    public AudioClip thud,jump, moonJump, metal, earthAmbient, moonAmbient, venusAmbient, click;
 
     private void Start()
     {

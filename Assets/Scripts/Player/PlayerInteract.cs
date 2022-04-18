@@ -18,8 +18,11 @@ public class PlayerInteract : MonoBehaviour
     string playerLocation;
     PortalManager portalManager;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         highlightObj = placeholderHighlightObject;
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();
@@ -57,6 +60,19 @@ public class PlayerInteract : MonoBehaviour
                     break;
                 case "button":
                     UpdatePortalAddress(obj.gameObject);
+                    if(playerLocation == "moon")
+                    {
+                        return;
+                    }
+                    if(playerLocation == "earth")
+                    {
+                        audioManager.PlayCollisionAudio(1, 1, audioManager.clickVolume, audioManager.earthPitch, audioManager.click);
+                    }
+                    else if (playerLocation == "venus")
+                    {
+                        audioManager.PlayCollisionAudio(1, 1, audioManager.clickVolume, audioManager.venusPitch, audioManager.click);
+                    }
+                    
                     break;
                 default:
                     break;
@@ -198,7 +214,7 @@ public class PlayerInteract : MonoBehaviour
         highlightObj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         isGrabbing = false;
 
-        obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 0.2f) + (playerCam.transform.up * 0.5f);
+        obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 0.75f) + (playerCam.transform.up * 0.5f);
         obj.transform.rotation = playerCam.transform.rotation;
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();

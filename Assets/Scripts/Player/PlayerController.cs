@@ -37,6 +37,7 @@ public class PlayerController : EventHorizonTransition
 
     //Audio
     AudioManager audioManager;
+    float audioLimit = 0.25f, audioTimer;
 
     private void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerController : EventHorizonTransition
         Movement();
         Rotate();
         Jump();
+        audioTimer += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -103,7 +105,31 @@ public class PlayerController : EventHorizonTransition
         playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.collider.tag.ToString())
+        {
+            case "ground":
+                isGrounded = true;
+                if(audioTimer < audioLimit)
+                {
+                    return;
+                }
+                if(playerLocation == "earth")
+                {
+                    audioManager.PlayCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.earthPitch, audioManager.jump);
+                }
+                if (playerLocation == "venus")
+                {
+                    audioManager.PlayCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.venusPitch, audioManager.jump);
+                }
+                if (playerLocation == "moon")
+                {
+                    audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                }
+                break;
+        }
+    }
 
     private void OnCollisionStay(Collision collision)
     {
@@ -120,6 +146,7 @@ public class PlayerController : EventHorizonTransition
         switch (collision.collider.tag.ToString())
         {
             case "ground":
+                audioTimer = 0;
                 isGrounded = false;
                 break;
         }
