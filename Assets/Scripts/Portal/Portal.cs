@@ -58,10 +58,16 @@ public class Portal : MonoBehaviour
 
         index = portalManager.portals.IndexOf(this.gameObject);
 
-        if(index > 1)
+        if((index == 0) || index == 3)
         {
-            this.gameObject.SetActive(false);
+            Debug.Log(index);
+            return;           
         }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+        
     }
 
     private void LateUpdate()

@@ -97,7 +97,7 @@ public class PlayerInteract : MonoBehaviour
     {
         highlightObj.SendMessage("Highlight", false, SendMessageOptions.DontRequireReceiver);
         highlightObj = placeholderHighlightObject;
-        bool linkCheck;
+        //bool linkCheck;
         List<int> activePortals = ActivePortals();
         switch (playerLocation)
         {           
