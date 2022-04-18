@@ -16,6 +16,8 @@ TagManager:
   - worldModel
   - eventHorizon
   - tree
+  - AudioManager
+  - spaceStationBoundary
   layers:
   - Default
   - TransparentFX

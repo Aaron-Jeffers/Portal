@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using SoundTest;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -24,7 +23,8 @@ public class PlayerInteract : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<SoundManager>();
+        var temp = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = temp.gameObject.GetComponent<SoundManager>();
         highlightObj = placeholderHighlightObject;
         playerCam = GetComponentInChildren<Camera>();
         portalManager = FindObjectOfType<PortalManager>();

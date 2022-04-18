@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SoundTest;
 
 public class PlayerController : EventHorizonTransition
 {
@@ -42,7 +41,8 @@ public class PlayerController : EventHorizonTransition
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<SoundManager>();
+        var temp = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = temp.gameObject.GetComponent<SoundManager>();
     }
     private void Start()
     {
@@ -142,19 +142,6 @@ public class PlayerController : EventHorizonTransition
                     default:
                         break;
                 }
-
-                //if (playerLocation == "earth")
-                //{
-                //    audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
-                //}
-                //if (playerLocation == "venus")
-                //{
-                //    audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
-                //}
-                //if (playerLocation == "moon")
-                //{
-                //    audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                //}
                 break;
         }
     }

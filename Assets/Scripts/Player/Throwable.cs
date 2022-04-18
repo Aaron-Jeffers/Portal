@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using SoundTest;
 
 public class Throwable : EventHorizonTransition
 {
@@ -20,7 +19,8 @@ public class Throwable : EventHorizonTransition
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<SoundManager>();
+        var temp = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = temp.gameObject.GetComponent<SoundManager>();
     }
     private void Start()
     {
