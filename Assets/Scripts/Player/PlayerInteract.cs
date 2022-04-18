@@ -98,30 +98,104 @@ public class PlayerInteract : MonoBehaviour
         highlightObj.SendMessage("Highlight", false, SendMessageOptions.DontRequireReceiver);
         highlightObj = placeholderHighlightObject;
         bool linkCheck;
+        List<int> activePortals = ActivePortals();
         switch (playerLocation)
-        {
+        {           
             case "earth":
-                linkCheck = portalManager.portals[0].activeSelf;
-                HandlePortalConnection(0, 1, 2, 3, linkCheck);
+                if(activePortals[0] == 0)
+                {
+                    activePortals.Add(1);
+                    activePortals.Add(6);
+                }
+                else if(activePortals[0] == 1)
+                {
+                    activePortals.Add(2);
+                    activePortals.Add(9);
+                }
+                else if (activePortals[0] == 2)
+                {
+                    activePortals.Add(0);
+                    activePortals.Add(3);
+                }
+                
                 break;
             case "moon":
-                linkCheck = portalManager.portals[1].activeSelf;
-                HandlePortalConnection(0, 1, 4, 5, linkCheck);
+                if (activePortals[0] == 0)
+                {
+                    activePortals.Add(4);
+                    activePortals.Add(7);
+                }
+                else if (activePortals[0] == 4)
+                {
+                    activePortals.Add(5);
+                    activePortals.Add(10);
+                }
+                else if (activePortals[0] == 5)
+                {
+                    activePortals.Add(0);
+                    activePortals.Add(3);
+                }
                 break;
             case "venus":
-                linkCheck = portalManager.portals[3].activeSelf;
-                HandlePortalConnection(2, 3, 4, 5, linkCheck);
+                if (activePortals[0] == 1)
+                {
+                    activePortals.Add(4);
+                    activePortals.Add(7);
+                }
+                else if (activePortals[0] == 4)
+                {
+                    activePortals.Add(8);
+                    activePortals.Add(11);
+                }
+                else if (activePortals[0] == 8)
+                {
+                    activePortals.Add(1);
+                    activePortals.Add(6);
+                }
+                break;
+            case "spaceStation":
+                if (activePortals[0] == 2)
+                {
+                    activePortals.Add(5);
+                    activePortals.Add(10);
+                }
+                else if (activePortals[0] == 5)
+                {
+                    activePortals.Add(8);
+                    activePortals.Add(11);
+                }
+                else if (activePortals[0] == 8)
+                {
+                    activePortals.Add(2);
+                    activePortals.Add(9);
+                }
                 break;
             default:
                 break;
         }
+
+        HandlePortalConnection(activePortals[0], activePortals[1], activePortals[2], activePortals[3]);
     }
-    void HandlePortalConnection(int a, int b, int c, int d, bool swap)
+
+    List<int> ActivePortals()
     {
-        portalManager.portals[a].SetActive(!swap);
-        portalManager.portals[b].SetActive(!swap);
-        portalManager.portals[c].SetActive(swap);
-        portalManager.portals[d].SetActive(swap);
+        List<int> activePortals = new List<int>();
+
+        for (int i = 0; i < portalManager.portals.Count; i++)
+        {
+            if(portalManager.portals[i].activeSelf)
+            {
+                activePortals.Add(i);
+            }
+        }
+        return activePortals;
+    }
+    void HandlePortalConnection(int active1, int active2, int nextActive1, int nextActive2)
+    {
+        portalManager.portals[active1].SetActive(false);
+        portalManager.portals[active2].SetActive(false);
+        portalManager.portals[nextActive1].SetActive(true);
+        portalManager.portals[nextActive2].SetActive(true);
     }
 
     private RaycastHit Raycast(Vector3 startPos, Vector3 direction, float distance)
@@ -246,6 +320,9 @@ public class PlayerInteract : MonoBehaviour
                 break;
             case "venusBoundary":
                 playerLocation = "venus";
+                break;
+            case "spaceStationBoundary":
+                playerLocation = "spaceStation";
                 break;
             default:
                 break;

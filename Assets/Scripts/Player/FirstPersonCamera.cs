@@ -28,26 +28,38 @@ public class FirstPersonCamera : MonoBehaviour
             case "Earth2Moon":
                 RenderSettings.skybox = moonSkybox;
                 break;
-            case "Moon2Earth":
-                RenderSettings.skybox = earthSkybox;
-                break;
             case "Earth2Venus":
                 RenderSettings.skybox = venusSkybox;
                 break;
-            case "Venus2Earth":
+            case "Earth2Station":
+                RenderSettings.skybox = moonSkybox;
+                break;
+            case "Moon2Earth":
                 RenderSettings.skybox = earthSkybox;
                 break;
             case "Moon2Venus":
                 RenderSettings.skybox = venusSkybox;
                 break;
+            case "Moon2Station":
+                RenderSettings.skybox = moonSkybox;
+                break;
+            case "Venus2Earth":
+                RenderSettings.skybox = earthSkybox;
+                break;
             case "Venus2Moon":
                 RenderSettings.skybox = moonSkybox;
                 break;
-            case "Blah1":
+            case "Venus2Station":
                 RenderSettings.skybox = moonSkybox;
                 break;
-            case "Blah2":
+            case "Station2Earth":
                 RenderSettings.skybox = earthSkybox;
+                break;
+            case "Station2Moon":
+                RenderSettings.skybox = moonSkybox;
+                break;
+            case "Station2Venus":
+                RenderSettings.skybox = venusSkybox;
                 break;
             default:
                 break;

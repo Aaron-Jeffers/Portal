@@ -35,21 +35,30 @@ public class Portal : MonoBehaviour
             case 0:
                 worldModels[1].SetActive(false);
                 worldModels[2].SetActive(false);
+                worldModels[3].SetActive(false);
                 break;
             case 1:
                 worldModels[0].SetActive(false);
                 worldModels[2].SetActive(false);
+                worldModels[3].SetActive(false);
                 break;
             case 2:
                 worldModels[0].SetActive(false);
                 worldModels[1].SetActive(false);
+                worldModels[3].SetActive(false);
+                break;
+            case 3:
+                worldModels[0].SetActive(false);
+                worldModels[1].SetActive(false);
+                worldModels[2].SetActive(false);
                 break;
             default:
                 break;
         }
 
         index = portalManager.portals.IndexOf(this.gameObject);
-        if(index >= 2)
+
+        if(index > 1)
         {
             this.gameObject.SetActive(false);
         }

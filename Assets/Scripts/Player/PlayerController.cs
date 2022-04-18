@@ -7,7 +7,7 @@ public class PlayerController : EventHorizonTransition
     [SerializeField]
     [Header("Movement Variables", order = 0)]
     public float walkSpeed;
-    public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier;
+    public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier, spaceStationSpeedMultiplier;
     float worldSpeedMultiplier;
     public float sprintMultiplier;
     float sprintSpeed;
@@ -21,6 +21,7 @@ public class PlayerController : EventHorizonTransition
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
+    float spaceStationGravity = -9.81f;
     float gravity;
     public float jumpForce;
 
@@ -139,6 +140,8 @@ public class PlayerController : EventHorizonTransition
                     case "moon":
                         audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
                         break;
+                    case "spaceStation":
+                        break;
                     default:
                         break;
                 }
@@ -184,6 +187,9 @@ public class PlayerController : EventHorizonTransition
             case "venusBoundary":               
                 gravity = venusGravity;
                 break;
+            case "spaceStationBoundary":
+                gravity = spaceStationGravity;
+                break;
             default:
                 break;
         }
@@ -208,6 +214,11 @@ public class PlayerController : EventHorizonTransition
                 audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);
                 playerLocation = "venus";
                 worldSpeedMultiplier = venusSpeedMultiplier;
+                break;
+            case "spaceStationBoundary":
+                audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
+                playerLocation = "spaceStation";
+                worldSpeedMultiplier = spaceStationSpeedMultiplier;
                 break;
             default:
                 break;

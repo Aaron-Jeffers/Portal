@@ -9,6 +9,7 @@ public class Throwable : EventHorizonTransition
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
+    float spaceStationGravity = -9.81f;
     float gravity;
 
     //Audio
@@ -56,6 +57,10 @@ public class Throwable : EventHorizonTransition
             case "venusBoundary":
                 environment = "venus";
                 gravity = venusGravity;
+                break;
+            case "spaceStationBoundary":
+                environment = "spaceStation";
+                gravity = spaceStationGravity;
                 break;
             default:
                 break;
