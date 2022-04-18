@@ -151,6 +151,10 @@ public class PlayerInteract : MonoBehaviour
 
             case "portal":
                 var portal = obj.GetComponent<Portal>();
+                if(!portal)
+                {
+                    return;
+                }
                 Vector3 newRayPositionOffset = portal.endPortal.gameObject.transform.position - portal.gameObject.transform.position;
 
                 float rayCloneDistance = grabDistance - ray.distance;
@@ -194,7 +198,7 @@ public class PlayerInteract : MonoBehaviour
         highlightObj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         isGrabbing = false;
 
-        obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 1.5f) + (playerCam.transform.up * 0.5f);
+        obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 0.2f) + (playerCam.transform.up * 0.5f);
         obj.transform.rotation = playerCam.transform.rotation;
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();

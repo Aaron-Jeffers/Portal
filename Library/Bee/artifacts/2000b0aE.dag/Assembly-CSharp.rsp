@@ -300,6 +300,8 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Scripts/Miscellaneous/AudioManager.cs"
+"Assets/Scripts/Miscellaneous/RockInitialise.cs"
 "Assets/Scripts/Miscellaneous/RockSpawner.cs"
 "Assets/Scripts/Miscellaneous/RotateWorldModels.cs"
 "Assets/Scripts/Miscellaneous/Scene.cs"
@@ -312,6 +314,7 @@
 "Assets/Scripts/Portal/EventHorizonTransition.cs"
 "Assets/Scripts/Portal/Portal.cs"
 "Assets/Scripts/Portal/PortalManager.cs"
+"Assets/Scripts/Portal/WorldSwitch.cs"
 -langversion:8.0
 
 /deterministic

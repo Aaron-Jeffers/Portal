@@ -35,8 +35,12 @@ public class PlayerController : EventHorizonTransition
     float yaw;
     public string playerLocation = "earth";
 
+    //Audio
+    AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         playerCam = GetComponentInChildren<Camera>();
         sprintSpeed = walkSpeed * sprintMultiplier;
         rb = GetComponent<Rigidbody>();
@@ -149,14 +153,17 @@ public class PlayerController : EventHorizonTransition
         switch (other.tag.ToString())
         {
             case "earthBoundary":
+                audioManager.PlayAmbientAudio(audioManager.earthAmbient, audioManager.ambientEarthVolume);
                 playerLocation = "earth";
                 worldSpeedMultiplier = earthSpeedMultiplier;
                 break;
             case "moonBoundary":
+                audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "moon";
                 worldSpeedMultiplier = moonSpeedMultiplier;
                 break;
             case "venusBoundary":
+                audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);
                 playerLocation = "venus";
                 worldSpeedMultiplier = venusSpeedMultiplier;
                 break;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 373008929251255511}
   m_Layer: 0
   m_Name: Tree1
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3348101308680695996}
   m_Layer: 0
   m_Name: Leaves1
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 7982092500507961040}
   m_Layer: 0
   m_Name: Tree1
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
