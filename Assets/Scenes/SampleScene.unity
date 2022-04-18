@@ -18508,6 +18508,8 @@ MonoBehaviour:
   - {fileID: 1282232499}
   - {fileID: 1114727693}
   - {fileID: 979612395}
+  - {fileID: 1658435860}
+  - {fileID: 1481087646}
   earthSkybox: {fileID: 2100000, guid: 378a6d13b68230e44b6eaf2ce5ed2ffa, type: 2}
   moonSkybox: {fileID: 2100000, guid: bea5f14c810040e439724d0c9d46c96d, type: 2}
   venusSkybox: {fileID: 2100000, guid: b46f9da81179b604fb46ba329c4b334d, type: 2}
@@ -20019,6 +20021,8 @@ MonoBehaviour:
   - {fileID: 1282232498}
   - {fileID: 1114727692}
   - {fileID: 979612391}
+  - {fileID: 1658435856}
+  - {fileID: 1481087642}
 --- !u!4 &1031488146
 Transform:
   m_ObjectHideFlags: 0
@@ -27586,7 +27590,7 @@ GameObject:
   - component: {fileID: 1481087645}
   - component: {fileID: 1481087644}
   m_Layer: 0
-  m_Name: TestSpace
+  m_Name: Blah
   m_TagString: portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27649,7 +27653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPortal: {fileID: 1658435860}
-  endPortalWorldSpace: 2
+  endPortalWorldSpace: 0
   eventHorizon: {fileID: 1428398367}
   worldModels:
   - {fileID: 0}
@@ -30205,7 +30209,7 @@ GameObject:
   - component: {fileID: 1658435859}
   - component: {fileID: 1658435858}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Blah1
   m_TagString: portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30268,7 +30272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPortal: {fileID: 1481087646}
-  endPortalWorldSpace: 2
+  endPortalWorldSpace: 1
   eventHorizon: {fileID: 743752705}
   worldModels:
   - {fileID: 0}
@@ -40801,8 +40805,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263378353637971803}
-  - component: {fileID: 7578241571922491374}
-  - component: {fileID: 1652063131408191062}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -40824,32 +40826,6 @@ Transform:
   m_Father: {fileID: 8936513273197640539}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1652063131408191062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263378353637971876}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13bb469474e0da84abd8f61ba2e2868c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!64 &1750366404085256290
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4110355595270380177}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 313b2792b366bef4caff25e151853343, type: 3}
 --- !u!4 &1863785844957268706
 Transform:
   m_ObjectHideFlags: 0
@@ -40922,18 +40898,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7452138139260967385}
   m_Mesh: {fileID: -2432090755550338912, guid: 2a1acc23451d1b44eba31c94e9b9be95, type: 3}
---- !u!114 &3772126929453427264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4110355595270380177}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13bb469474e0da84abd8f61ba2e2868c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &3974465190697037368
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41110,8 +41074,6 @@ GameObject:
   - component: {fileID: 5169224023170566570}
   - component: {fileID: 8028768599858311392}
   - component: {fileID: 6795457543607833716}
-  - component: {fileID: 1750366404085256290}
-  - component: {fileID: 3772126929453427264}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -41656,19 +41618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &7578241571922491374
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263378353637971876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &7646973893275975350
 MeshRenderer:
   m_ObjectHideFlags: 0

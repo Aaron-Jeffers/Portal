@@ -43,8 +43,11 @@ public class FirstPersonCamera : MonoBehaviour
             case "Venus2Moon":
                 RenderSettings.skybox = moonSkybox;
                 break;
-            case "TestSpace":
+            case "Blah1":
                 RenderSettings.skybox = moonSkybox;
+                break;
+            case "Blah2":
+                RenderSettings.skybox = earthSkybox;
                 break;
             default:
                 break;
