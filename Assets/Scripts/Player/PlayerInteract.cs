@@ -65,7 +65,7 @@ public class PlayerInteract : MonoBehaviour
                     audioManager.metalJumpVolume = 0;
                     audioManager.jumpVolume = 0;
 
-                    if(playerLocation == "moon")
+                    if(playerLocation == "moon" || playerLocation == "spaceStation")
                     {
                         StartCoroutine(ChangeVolume(0.1f));
                         return;
@@ -204,20 +204,27 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(startPos, direction, out hit, distance))
         {
-            //Debug.DrawRay(startPos, direction, Color.cyan, distance);
             return hit;
         }
         return hit;
     }
     private void HighlightRaycast()
     {
-        if(isGrabbing || !Raycast(playerCam.transform.position, playerCam.transform.forward, grabDistance).collider)
+        if(!Raycast(playerCam.transform.position, playerCam.transform.forward, grabDistance).collider)
         {
             highlightObj.SendMessage("Highlight", false);
-            //highlightObj.GetComponent<Interactable>().Highlight(false);
+                        
             return;
         }
-       
+
+        //if (isGrabbing)
+        //{
+        //    if(highlightObj.CompareTag("rock"))
+        //    {
+        //        return;
+        //    }
+        //}
+
         highlightObj.SendMessage("Highlight", false);
         //highlightObj.GetComponent<Interactable>().Highlight(false);
 
@@ -225,6 +232,10 @@ public class PlayerInteract : MonoBehaviour
 
         if(ray.collider)
         {
+            if (isGrabbing && ray.collider.CompareTag("rock"))
+            {
+                return;
+            }
             RaycastSwitch(ray);
         }        
     }

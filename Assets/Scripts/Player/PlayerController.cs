@@ -23,7 +23,7 @@ public class PlayerController : EventHorizonTransition
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
-    float spaceStationGravity = -0.5f;
+    float spaceStationGravity = -15f;
     float gravity;
     public float jumpForce;
 
@@ -49,7 +49,6 @@ public class PlayerController : EventHorizonTransition
     }
     private void Start()
     {
-        //audioManager = FindObjectOfType<AudioManager>();
         playerCam = GetComponentInChildren<Camera>();
         sprintSpeed = walkSpeed * sprintMultiplier;
         rb = GetComponent<Rigidbody>();
@@ -135,27 +134,38 @@ public class PlayerController : EventHorizonTransition
         {
             case "ground":
                 isGrounded = true;
-                if(collision.collider.name == "Base"  || collision.collider.name == "Base2")
+                if(collision.collider.name == "Base1"  || collision.collider.name == "Base2" || collision.collider.name == "Base3")
                 {
                     jump = audioManager.metalJump;
                     jumpVolume = audioManager.metalJumpVolume;
                 }
-                if(audioTimer < audioLimit || collision.relativeVelocity.y < 2)
+                if(audioTimer < audioLimit)
                 {
                     return;
                 }
+                bool temp = (collision.relativeVelocity.y < 2);
                 switch (playerLocation)
                 {
                     case "earth":
-                        audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
+                        if(!temp)
+                        {
+                            audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
+                        }                       
                         break;
                     case "venus":
-                        audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
+                        if (!temp)
+                        {
+                            audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
+                        }                            
                         break;
                     case "moon":
-                        audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                        if (!temp)
+                        {
+                            audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                        }
                         break;
                     case "spaceStation":
+                        audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
                         break;
                     default:
                         break;
@@ -191,21 +201,26 @@ public class PlayerController : EventHorizonTransition
         {
             case "spaceStationBoundary":
                 gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-                gravity = spaceStationGravity;
+                jumpForce = 30000;
+                gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
                 break;
             case "portal":
                 gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = 15000;
                 break;
             case "earthBoundary":
                 gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = 15000;
                 gravity = earthGravity;
                 break;
             case "moonBoundary":
                 gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = 15000;
                 gravity = moonGravity;
                 break;
             case "venusBoundary":
                 gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = 15000;
                 gravity = venusGravity;
                 break;
             

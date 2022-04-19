@@ -9,8 +9,10 @@ public class Throwable : EventHorizonTransition
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
-    float spaceStationGravity = -9.81f;
+    float spaceStationGravity = -15f;
     float gravity;
+    public Transform spaceStationSingularity;
+    public Vector3 gravityDirection;
 
     //Audio
     public SoundManager audioManager;
@@ -20,6 +22,7 @@ public class Throwable : EventHorizonTransition
 
     private void Awake()
     {
+        spaceStationSingularity = GameObject.FindGameObjectWithTag("singularity").transform;
         var temp = GameObject.FindGameObjectWithTag("AudioManager");
         audioManager = temp.gameObject.GetComponent<SoundManager>();
     }
@@ -31,6 +34,16 @@ public class Throwable : EventHorizonTransition
     }
     private void FixedUpdate()
     {
+        if (environment == "spaceStation")
+        {
+            gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
+        }
+
+        else
+        {
+            gravityDirection = Vector3.up;
+        }
+        //gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
         rb.AddForce(Vector3.up * rb.mass * gravity);
         audioDelay += Time.deltaTime;        
     }
@@ -47,7 +60,7 @@ public class Throwable : EventHorizonTransition
         switch (other.tag.ToString())
         {
             case "earthBoundary":
-                environment = "earth";
+                environment = "earth";                
                 gravity = earthGravity;
                 break;
             case "moonBoundary":
@@ -60,7 +73,7 @@ public class Throwable : EventHorizonTransition
                 break;
             case "spaceStationBoundary":
                 environment = "spaceStation";
-                gravity = spaceStationGravity;
+                gravity = spaceStationGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
                 break;
             default:
                 break;
@@ -69,7 +82,7 @@ public class Throwable : EventHorizonTransition
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(environment == "moon" || audioDelay < delayLimit)
+        if(environment == "moon" || environment == "spaceStation" || audioDelay < delayLimit)
         {
             return;
         }

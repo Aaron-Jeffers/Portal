@@ -18,6 +18,7 @@ TagManager:
   - tree
   - AudioManager
   - spaceStationBoundary
+  - singularity
   layers:
   - Default
   - TransparentFX
