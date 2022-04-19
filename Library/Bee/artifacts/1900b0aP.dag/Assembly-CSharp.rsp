@@ -288,6 +288,8 @@
 "Assets/Scripts/Miscellaneous/AudioManager.cs"
 "Assets/Scripts/Miscellaneous/RockInitialise.cs"
 "Assets/Scripts/Miscellaneous/RockSpawner.cs"
+"Assets/Scripts/Miscellaneous/RotateEarth.cs"
+"Assets/Scripts/Miscellaneous/RotateMoon.cs"
 "Assets/Scripts/Miscellaneous/RotateWorldModels.cs"
 "Assets/Scripts/Miscellaneous/Scene.cs"
 "Assets/Scripts/Miscellaneous/SoundManager.cs"

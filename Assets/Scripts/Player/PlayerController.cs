@@ -144,7 +144,7 @@ public class PlayerController : EventHorizonTransition
                 reverseGravity *= -1;
             }
             rb.AddForce((gravityDirection * jumpForce * reverseGravity));
-            StartCoroutine(JumpForward(Time.deltaTime));                     
+            StartCoroutine(JumpForward(0.01f));                     
         }
     }
     IEnumerator JumpForward(float time)
@@ -152,7 +152,8 @@ public class PlayerController : EventHorizonTransition
         yield return new WaitForSeconds(time);
         if(inSpace)
         {
-            rb.AddForce((firstPersonCam.transform.forward * jumpForce*20));
+            Debug.Log("called");
+            rb.AddForce((firstPersonCam.transform.forward * jumpForce * 15));
 
         }
         else
@@ -253,7 +254,7 @@ public class PlayerController : EventHorizonTransition
 
                 gravity = regualar + reverse;
 
-                Debug.Log(gravity + " "+ regualar + " " + reverse);
+                //Debug.Log(gravity + " "+ regualar + " " + reverse);
                 break;
             case "portal":
                 gravityDirection = new Vector3(0, 1, 0);
