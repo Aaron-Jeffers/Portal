@@ -14,10 +14,8 @@ public class EventHorizonTransition : MonoBehaviour
 
     public virtual void EnterEventHorizon()
     {
-
     }
     public virtual void ExitEventHorizon()
     {
-
     }
 }

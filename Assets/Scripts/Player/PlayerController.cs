@@ -19,6 +19,7 @@ public class PlayerController : EventHorizonTransition
     bool gravityReversed;
     Camera firstPersonCam;
     public bool inSpace;
+    
 
     [SerializeField]
     [Header("Jump Variables", order = 1)]
@@ -65,7 +66,7 @@ public class PlayerController : EventHorizonTransition
         Movement();
         Rotate();
         Jump();
-        audioTimer += Time.deltaTime;
+        audioTimer += Time.deltaTime;       
     }
 
     private void FixedUpdate()
@@ -128,10 +129,23 @@ public class PlayerController : EventHorizonTransition
         }
         var myForward = Vector3.Cross(transform.right, newgravDir);
         var targetRot = Quaternion.LookRotation(myForward, newgravDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 2.5f * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);
 
         transform.Rotate(0, yaw, 0);
+
+        //if((playerLocation == "spaceStation") && tempTranslation)
+        //{
+        //    transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.2f * Time.deltaTime);
+        //    //StartCoroutine(ApplyTranslation(0.01f));
+        //}
     }
+
+    //IEnumerator ApplyTranslation(float time)
+    //{
+    //    yield return new WaitForSeconds(time);
+    //    //transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.2f * Time.deltaTime);
+    //    tempTranslation = true;
+    //}
 
     private void Jump()
     {
@@ -163,10 +177,9 @@ public class PlayerController : EventHorizonTransition
     public override void Transition(Transform fromPortal, Transform toPortal,string endPortal, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
+        transform.rotation = rot;
+
         Physics.SyncTransforms();
-        rb.velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.velocity));
-        rb.angularVelocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.angularVelocity));
-        isGrounded = true;
         playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
     }
 
@@ -245,12 +258,12 @@ public class PlayerController : EventHorizonTransition
                 float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
                 //gravity += spaceStationReverseGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
 
-                gravity = regualar + reverse;
-
+                gravity = regualar + reverse;                
                 //Debug.Log(gravity + " "+ regualar + " " + reverse);
+
                 break;
             case "portal":
-                gravityDirection = new Vector3(0, 1, 0);
+                //gravityDirection = new Vector3(0, 1, 0);                
                 jumpForce = 15000;
                 break;
             case "earthBoundary":
@@ -289,7 +302,7 @@ public class PlayerController : EventHorizonTransition
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "moon";
                 worldSpeedMultiplier = moonSpeedMultiplier;
-                inSpace = false;
+                inSpace = false;               
                 break;
             case "venusBoundary":
                 audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);

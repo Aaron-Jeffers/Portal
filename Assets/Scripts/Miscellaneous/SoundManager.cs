@@ -13,11 +13,6 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip thud, jump, moonJump, metalJump, metal, earthAmbient, moonAmbient, venusAmbient, click;
 
-    private void Start()
-    {
-        //audioSource = GetComponent<AudioSource>();
-    }
-
     public void PlayCollisionAudio(float magnitude, float dist, float volume, float pitch, AudioClip clip)
     {
 

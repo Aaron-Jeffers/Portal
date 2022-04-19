@@ -16,11 +16,15 @@ public class Portal : MonoBehaviour
 
     List<EventHorizonTransition> transitionObjects;
     public List<GameObject> worldModels;
+
+    Transform rotationCentre;
+    string worldSpace;
     
 
     int index;
     private void Awake()
     {
+        rotationCentre = GameObject.FindGameObjectWithTag("rotationCentre").transform;
         firstPersonCamera = Camera.main;
         portalCamera = GetComponentInChildren<Camera>();
         portalCamera.enabled = false;
@@ -69,6 +73,13 @@ public class Portal : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if(worldSpace == "spaceStation")
+        {
+            //transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.00001f * Time.realtimeSinceStartup);
+        }
+    }
     private void LateUpdate()
     {
         Transitions();       
@@ -208,6 +219,18 @@ public class Portal : MonoBehaviour
         {
             transitioningObject.ExitEventHorizon();
             transitionObjects.Remove(transitioningObject);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("spaceStationBoundary"))
+        {
+            worldSpace = "spaceStation";
+        }
+        else
+        {
+            worldSpace = "default";
         }
     }
 }

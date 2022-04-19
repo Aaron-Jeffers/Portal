@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateMoon : MonoBehaviour
 {
-    float rotateSpeed = 1f;
+    public float rotateSpeed = 1f;
     public Transform rotationCentre;
     private void Update()
     {

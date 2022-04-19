@@ -19,6 +19,7 @@ TagManager:
   - AudioManager
   - spaceStationBoundary
   - singularity
+  - rotationCentre
   layers:
   - Default
   - TransparentFX
