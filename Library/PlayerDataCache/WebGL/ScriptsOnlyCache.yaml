@@ -168,7 +168,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a41ea3cbb2a87e4d5ef14c55fbef178b
+      Hash: 57a03fe16f2060abf9d6cd807be85af1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -894,7 +894,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 93af9d246558feb80bfeb5ffd23dc99a
+      Hash: 9b46357d7ad577fc552e5dfcdb95cc7c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Throwable
@@ -970,13 +970,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 81bf40847701d17b9ced283b8a365f88
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AudioManager
   platform: 20
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0_8_WebGL
+  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0_9_WebGL

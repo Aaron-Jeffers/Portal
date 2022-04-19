@@ -145,6 +145,7 @@ UnityEngine.Font::get_dynamic
 UnityEngine.Font::get_fontSize
 UnityEngine.Font::get_material
 UnityEngine.GameObject::GetComponentsInternal
+UnityEngine.GameObject::CompareTag
 UnityEngine.GameObject::get_activeInHierarchy
 UnityEngine.GameObject::get_activeSelf
 UnityEngine.GameObject::get_layer
@@ -321,6 +322,8 @@ UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_activeColorSpace
 UnityEngine.Quaternion::Internal_FromEulerRad_Injected
 UnityEngine.Quaternion::Inverse_Injected
+UnityEngine.Quaternion::Lerp_Injected
+UnityEngine.Quaternion::LookRotation_Injected
 UnityEngine.Random::Range
 UnityEngine.RectOffset::get_bottom
 UnityEngine.RectOffset::get_horizontal
@@ -452,6 +455,7 @@ UnityEngine.Transform::InverseTransformVector_Injected
 UnityEngine.Transform::SetAsFirstSibling
 UnityEngine.Transform::SetParent
 UnityEngine.Transform::SetPositionAndRotation_Injected
+UnityEngine.Transform::TransformDirection_Injected
 UnityEngine.Transform::TransformPoint_Injected
 UnityEngine.Transform::TransformVector_Injected
 UnityEngine.Transform::get_localPosition_Injected

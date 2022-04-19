@@ -16,6 +16,7 @@ public class PlayerController : EventHorizonTransition
     public Vector3 xVelocity, yVelocity, zVelocity;
     public Transform spaceStationSingularity;
     public Vector3 gravityDirection;
+    bool gravityReversed;
 
     [SerializeField]
     [Header("Jump Variables", order = 1)]
@@ -24,6 +25,7 @@ public class PlayerController : EventHorizonTransition
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
     float spaceStationGravity = -15f;
+    float spaceStationReverseGravity = 15f;
     float gravity;
     public float jumpForce;
 
@@ -101,10 +103,19 @@ public class PlayerController : EventHorizonTransition
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
 
         /////////transform.Rotate(transform.up * yaw);
-
-        var myForward = Vector3.Cross(transform.right, gravityDirection);
-        var targetRot = Quaternion.LookRotation(myForward, gravityDirection);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 50f * Time.deltaTime);
+        var newgravDir = gravityDirection;
+        if(gravity > 0)
+        {
+            gravityReversed = true;
+            newgravDir *= -1;
+        }
+        else
+        {
+            gravityReversed = false;
+        }
+        var myForward = Vector3.Cross(transform.right, newgravDir);
+        var targetRot = Quaternion.LookRotation(myForward, newgravDir);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 2.5f * Time.deltaTime);
 
         transform.Rotate(0, yaw, 0);
     }
@@ -113,7 +124,12 @@ public class PlayerController : EventHorizonTransition
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(gravityDirection * jumpForce);
+            var reverseGravity = 1;
+            if(gravityReversed)
+            {
+                reverseGravity *= -1;
+            }
+            rb.AddForce(gravityDirection * jumpForce * reverseGravity);
         }
     }
 
@@ -202,7 +218,14 @@ public class PlayerController : EventHorizonTransition
             case "spaceStationBoundary":
                 gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
                 jumpForce = 30000;
-                gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
+                //gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
+                float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position,transform.position)), 2) / 100000;
+                float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
+                //gravity += spaceStationReverseGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
+
+                gravity = regualar + reverse;
+
+                Debug.Log(gravity + " "+ regualar + " " + reverse);
                 break;
             case "portal":
                 gravityDirection = new Vector3(0, 1, 0);
