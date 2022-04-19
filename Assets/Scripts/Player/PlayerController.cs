@@ -18,6 +18,7 @@ public class PlayerController : EventHorizonTransition
     public Vector3 gravityDirection;
     bool gravityReversed;
     Camera firstPersonCam;
+    public bool inSpace;
 
     [SerializeField]
     [Header("Jump Variables", order = 1)]
@@ -28,7 +29,7 @@ public class PlayerController : EventHorizonTransition
     float spaceStationGravity = -15f;
     float spaceStationReverseGravity = 15f;
     float gravity;
-    public float jumpForce;
+    public float jumpForce, spaceJumpForce;
 
     [SerializeField]
     [Header("Camera Variables", order = 2)]
@@ -137,18 +138,28 @@ public class PlayerController : EventHorizonTransition
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             var reverseGravity = 1;
-            if(gravityReversed)
+                   
+            if (gravityReversed)
             {
                 reverseGravity *= -1;
             }
             rb.AddForce((gravityDirection * jumpForce * reverseGravity));
-            StartCoroutine(JumpForward(Time.deltaTime));
+            StartCoroutine(JumpForward(Time.deltaTime));                     
         }
     }
     IEnumerator JumpForward(float time)
     {
         yield return new WaitForSeconds(time);
-        rb.AddForce((firstPersonCam.transform.forward * jumpForce/2));
+        if(inSpace)
+        {
+            rb.AddForce((firstPersonCam.transform.forward * jumpForce*20));
+
+        }
+        else
+        {
+            rb.AddForce((firstPersonCam.transform.forward * jumpForce / 2));
+        }
+        
     }
     public override void Transition(Transform fromPortal, Transform toPortal,string endPortal, Vector3 pos, Quaternion rot)
     {
@@ -234,7 +245,7 @@ public class PlayerController : EventHorizonTransition
         {
             case "spaceStationBoundary":
                 gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-                jumpForce = 25000;
+                jumpForce = spaceJumpForce;
                 //gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
                 float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position,transform.position)), 2) / 100000;
                 float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
@@ -278,21 +289,25 @@ public class PlayerController : EventHorizonTransition
                 audioManager.PlayAmbientAudio(audioManager.earthAmbient, audioManager.ambientEarthVolume);
                 playerLocation = "earth";
                 worldSpeedMultiplier = earthSpeedMultiplier;
+                inSpace = false;
                 break;
             case "moonBoundary":
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "moon";
                 worldSpeedMultiplier = moonSpeedMultiplier;
+                inSpace = false;
                 break;
             case "venusBoundary":
                 audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);
                 playerLocation = "venus";
                 worldSpeedMultiplier = venusSpeedMultiplier;
+                inSpace = false;
                 break;
             case "spaceStationBoundary":
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "spaceStation";
                 worldSpeedMultiplier = spaceStationSpeedMultiplier;
+                inSpace = true;
                 break;
             default:
                 break;

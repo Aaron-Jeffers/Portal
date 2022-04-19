@@ -4182,8 +4182,10 @@ MonoBehaviour:
   zVelocity: {x: 0, y: 0, z: 0}
   spaceStationSingularity: {fileID: 1053353965}
   gravityDirection: {x: 0, y: 0, z: 0}
+  inSpace: 0
   isGrounded: 0
   jumpForce: 15000
+  spaceJumpForce: 5000
   cameraTransform: {fileID: 963194228}
   mouseSensitivity: 600
   pitchMin: -90
