@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Miscellaneous\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RotateEarth.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\RotateMoon.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\AsteroidInitialise.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\SmallAsteroidInitialise.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Shaders\Wormhole.shader" />

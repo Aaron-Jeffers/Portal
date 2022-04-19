@@ -76,27 +76,13 @@ public class PlayerController : EventHorizonTransition
     private void Movement()
     {
         float forwardSpeed = ((Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed) * worldSpeedMultiplier;
-
-        //zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
-        //xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
-
         float zVel = Input.GetAxisRaw("Vertical") * forwardSpeed ;
         float xVel = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier ;
-        //yVelocity -= gravity * transform.up * Time.deltaTime;
-
-        //yVelocity = new Vector3(0, rb.velocity.y, 0);           ///////undo
-        //yVelocity = rb.velocity.y * transform.up;
         Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;
-
-        //rb.velocity = targetVelocity;
-
         if(isGrounded)
         {
             rb.velocity = (rb.velocity.y* transform.up) + (transform.forward * zVel) + (transform.right * xVel);
-
-            //transform.Translate(xVel, 0, zVel);
         }
-
         else
         {
             rb.velocity = rb.velocity;
@@ -132,20 +118,7 @@ public class PlayerController : EventHorizonTransition
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);
 
         transform.Rotate(0, yaw, 0);
-
-        //if((playerLocation == "spaceStation") && tempTranslation)
-        //{
-        //    transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.2f * Time.deltaTime);
-        //    //StartCoroutine(ApplyTranslation(0.01f));
-        //}
-    }
-
-    //IEnumerator ApplyTranslation(float time)
-    //{
-    //    yield return new WaitForSeconds(time);
-    //    //transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.2f * Time.deltaTime);
-    //    tempTranslation = true;
-    //}
+    }   
 
     private void Jump()
     {
@@ -179,6 +152,8 @@ public class PlayerController : EventHorizonTransition
         transform.position = pos;
         transform.rotation = rot;
 
+        rb.velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.velocity));
+        rb.angularVelocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.angularVelocity));
         Physics.SyncTransforms();
         playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
     }
@@ -263,7 +238,7 @@ public class PlayerController : EventHorizonTransition
 
                 break;
             case "portal":
-                //gravityDirection = new Vector3(0, 1, 0);                
+                //gravityDirection = new Vector3(0, 1, 0);               
                 jumpForce = 15000;
                 break;
             case "earthBoundary":
