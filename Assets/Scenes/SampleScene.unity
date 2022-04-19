@@ -40099,8 +40099,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263378353637971876}
-  m_LocalRotation: {x: 0.1566375, y: 0.5734883, z: -0.14829484, w: 0.7903066}
-  m_LocalPosition: {x: 24.7, y: -35.1, z: 15.3}
+  m_LocalRotation: {x: -0.018597241, y: 0.2157901, z: -0.14850174, w: 0.9649021}
+  m_LocalPosition: {x: 34.36, y: -16.09, z: 10.09}
   m_LocalScale: {x: 22.929499, y: 22.929499, z: 22.929499}
   m_Children:
   - {fileID: 6504071780667467512}
@@ -40108,7 +40108,7 @@ Transform:
   - {fileID: 8353358451227190120}
   m_Father: {fileID: 1565279580}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 24.688, y: 71.177, z: -3.454}
+  m_LocalEulerAnglesHint: {x: 1.616, y: 24.969, z: -17.141}
 --- !u!1 &1263378353637971876
 GameObject:
   m_ObjectHideFlags: 0
@@ -40118,6 +40118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263378353637971803}
+  - component: {fileID: 1263378353637971877}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -40125,6 +40126,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1263378353637971877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263378353637971876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a5f99aa3089b84c99910a22b647038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2663093773777352131
 GameObject:
   m_ObjectHideFlags: 0
@@ -40292,6 +40305,7 @@ GameObject:
   - component: {fileID: 5169224023170566570}
   - component: {fileID: 8028768599858311392}
   - component: {fileID: 6795457543607833716}
+  - component: {fileID: 4110355595270380178}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -40299,6 +40313,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4110355595270380178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110355595270380177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79c879b321584544b349ccc2d30fec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationCentre: {fileID: 1263378353637971803}
 --- !u!1001 &4732475362935478468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40487,13 +40514,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4110355595270380177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.18, y: 0, z: 4.83}
-  m_LocalScale: {x: 5.7323747, y: 5.7323747, z: 5.7323747}
+  m_LocalRotation: {x: -0.018597241, y: 0.2157901, z: -0.14850174, w: 0.9649021}
+  m_LocalPosition: {x: -22.54, y: 13.3, z: 8.55}
+  m_LocalScale: {x: 5.581728, y: 5.581728, z: 5.581728}
   m_Children: []
   m_Father: {fileID: 1565279580}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.616, y: 24.969, z: -17.141}
 --- !u!23 &5648966263054602063
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -117,12 +117,12 @@ public class PlayerController : EventHorizonTransition
 
         /////////transform.Rotate(transform.up * yaw);
         var newgravDir = gravityDirection;
-        if(gravity > 0)
+        if(gravity > 1)
         {
             gravityReversed = true;
             newgravDir *= -1;
         }
-        else
+        else if (gravity < -1)
         {
             gravityReversed = false;
         }

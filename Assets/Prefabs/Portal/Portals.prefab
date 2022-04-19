@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5539368258688746202}
   m_Layer: 0
   m_Name: Outline
-  m_TagString: portal
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 3914382631287367492}
   m_Layer: 0
   m_Name: 'Outline '
-  m_TagString: portal
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1079,7 +1079,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.72, y: 6, z: 1.55}
+  m_Size: {x: 5.72, y: 6, z: 0.1}
   m_Center: {x: 0, y: 1.84, z: 0}
 --- !u!1 &4732475363152621938
 GameObject:
@@ -1409,7 +1409,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.72, y: 6, z: 1.55}
+  m_Size: {x: 5.72, y: 6, z: 0.1}
   m_Center: {x: 0, y: 1.84, z: 0}
 --- !u!1 &4860926539380013510
 GameObject:
@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 4933915446845499936}
   m_Layer: 0
   m_Name: 'Outline '
-  m_TagString: portal
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -2241,7 +2241,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.72, y: 6, z: 1.55}
+  m_Size: {x: 5.72, y: 6, z: 0.1}
   m_Center: {x: 0, y: 1.84, z: 0}
 --- !u!1 &8457390348728995421
 GameObject:
