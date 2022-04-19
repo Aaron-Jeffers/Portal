@@ -10,6 +10,7 @@ public class Throwable : EventHorizonTransition
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
     float spaceStationGravity = -15f;
+    float spaceStationReverseGravity = 100f;
     float gravity;
     public Transform spaceStationSingularity;
     public Vector3 gravityDirection;
@@ -37,6 +38,7 @@ public class Throwable : EventHorizonTransition
         if (environment == "spaceStation")
         {
             gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
+            Debug.Log(gravityDirection);
         }
 
         else
@@ -44,7 +46,7 @@ public class Throwable : EventHorizonTransition
             gravityDirection = Vector3.up;
         }
         //gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-        rb.AddForce(Vector3.up * rb.mass * gravity);
+        rb.AddForce(gravityDirection * rb.mass * gravity);
         audioDelay += Time.deltaTime;        
     }
 
@@ -73,7 +75,14 @@ public class Throwable : EventHorizonTransition
                 break;
             case "spaceStationBoundary":
                 environment = "spaceStation";
-                gravity = spaceStationGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
+
+                //gravity = spaceStationGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
+
+                float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position)), 2) / 100000;
+                float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
+                //gravity += spaceStationReverseGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
+
+                gravity = regualar + reverse;
                 break;
             default:
                 break;

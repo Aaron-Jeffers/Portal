@@ -1027,9 +1027,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8801674707607186565}
     m_Modifications:
+    - target: {fileID: 359085170265193448, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: rotateSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329761736663871302, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329761736663871302, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644636008951471320, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644636008951471320, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
+      objectReference: {fileID: 0}
     - target: {fileID: 2962624403769806367, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
       propertyPath: m_Name
       value: SpaceStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046170937686747628, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046170937686747628, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951260569468762873, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951260569468762873, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663963326064310412, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663963326064310412, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
       objectReference: {fileID: 0}
     - target: {fileID: 6317270775040859428, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
       propertyPath: m_RootOrder
@@ -1086,6 +1130,18 @@ PrefabInstance:
     - target: {fileID: 6317270775040859428, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727483352319469229, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Range
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727483352319469229, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Intensity
+      value: 21.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768619665116387616, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: rotateSpeed
+      value: -250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}

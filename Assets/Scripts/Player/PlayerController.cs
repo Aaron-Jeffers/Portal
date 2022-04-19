@@ -27,7 +27,7 @@ public class PlayerController : EventHorizonTransition
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
     float spaceStationGravity = -15f;
-    float spaceStationReverseGravity = 15f;
+    float spaceStationReverseGravity = 60f;
     float gravity;
     public float jumpForce, spaceJumpForce;
 
@@ -117,7 +117,7 @@ public class PlayerController : EventHorizonTransition
 
         /////////transform.Rotate(transform.up * yaw);
         var newgravDir = gravityDirection;
-        if(gravity > 1)
+        if(gravity > 3)
         {
             gravityReversed = true;
             newgravDir *= -1;
@@ -152,9 +152,7 @@ public class PlayerController : EventHorizonTransition
         yield return new WaitForSeconds(time);
         if(inSpace)
         {
-            Debug.Log("called");
             rb.AddForce((firstPersonCam.transform.forward * jumpForce * 15));
-
         }
         else
         {
@@ -166,6 +164,8 @@ public class PlayerController : EventHorizonTransition
     {
         transform.position = pos;
         Physics.SyncTransforms();
+        rb.velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.velocity));
+        rb.angularVelocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.angularVelocity));
         isGrounded = true;
         playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
     }
@@ -188,34 +188,27 @@ public class PlayerController : EventHorizonTransition
                 {
                     return;
                 }
-                bool temp = (collision.relativeVelocity.y < 2);
-                switch (playerLocation)
+                if(!(collision.relativeVelocity.y < 2))
                 {
-                    case "earth":
-                        if(!temp)
-                        {
+                    switch (playerLocation)
+                    {
+                        case "earth":
                             audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
-                        }                       
-                        break;
-                    case "venus":
-                        if (!temp)
-                        {
+                            break;
+                        case "venus":
                             audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
-                        }                            
-                        break;
-                    case "moon":
-                        if (!temp)
-                        {
+                            break;
+                        case "moon":
                             audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                        }
-                        break;
-                    case "spaceStation":
-                        audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                        break;
-                    default:
-                        break;
+                            break;
+                        case "spaceStation":
+                            audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                            break;
+                        default:
+                            break;
+                    }
                 }
-                break;
+                 break;
         }
     }
 

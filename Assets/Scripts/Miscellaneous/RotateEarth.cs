@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateEarth : MonoBehaviour
 {
-    float rotateSpeed = 5f;
+    public float rotateSpeed = 5f;
 
     private void Update()
     {
