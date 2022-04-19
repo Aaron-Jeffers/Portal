@@ -4170,13 +4170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6bbb7670765d64b94d8d03654214bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
+  walkSpeed: 4
   earthSpeedMultiplier: 1
   moonSpeedMultiplier: 0.5
   venusSpeedMultiplier: 0.45
-  spaceStationSpeedMultiplier: 1
+  spaceStationSpeedMultiplier: 0.4
   sprintMultiplier: 1.3
-  strafeMultiplier: 0.5
+  strafeMultiplier: 0.25
   xVelocity: {x: 0, y: 0, z: 0}
   yVelocity: {x: 0, y: 0, z: 0}
   zVelocity: {x: 0, y: 0, z: 0}
@@ -4871,7 +4871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267090275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7000, y: 0, z: -1.1402931}
+  m_LocalPosition: {x: 8000, y: 0, z: -1.1402931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433971038}
@@ -30326,7 +30326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682303068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7000, y: 0, z: -58.06}
+  m_LocalPosition: {x: -8000, y: 0, z: -58.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 219774801}
@@ -35261,6 +35261,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7634887753819466673, guid: 3ff06f2066048d1458cfca3c3a14d8c2, type: 3}
   m_PrefabInstance: {fileID: 1008935627}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1942289385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 863992412767036794, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+  m_PrefabInstance: {fileID: 354996524071571852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1942289390
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942289385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.7573828
+  m_Center: {x: -0.002731741, y: 0.0028414724, z: -0.0008034707}
 --- !u!1001 &1947061910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39899,6 +39917,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317270775040859428, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717390776242649648, guid: 7a3ac5fe6fbae9648b3c8be70122841f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

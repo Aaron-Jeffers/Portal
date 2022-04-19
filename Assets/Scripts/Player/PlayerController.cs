@@ -17,6 +17,7 @@ public class PlayerController : EventHorizonTransition
     public Transform spaceStationSingularity;
     public Vector3 gravityDirection;
     bool gravityReversed;
+    Camera firstPersonCam;
 
     [SerializeField]
     [Header("Jump Variables", order = 1)]
@@ -46,6 +47,7 @@ public class PlayerController : EventHorizonTransition
 
     private void Awake()
     {
+        firstPersonCam = GetComponentInChildren<Camera>();
         var temp = GameObject.FindGameObjectWithTag("AudioManager");
         audioManager = temp.gameObject.GetComponent<SoundManager>();
     }
@@ -76,8 +78,8 @@ public class PlayerController : EventHorizonTransition
         //zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
         //xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
 
-        float zVel = Input.GetAxisRaw("Vertical") * forwardSpeed * Time.deltaTime;
-        float xVel = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier *Time.deltaTime;
+        float zVel = Input.GetAxisRaw("Vertical") * forwardSpeed ;
+        float xVel = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier ;
         //yVelocity -= gravity * transform.up * Time.deltaTime;
 
         //yVelocity = new Vector3(0, rb.velocity.y, 0);           ///////undo
@@ -86,7 +88,17 @@ public class PlayerController : EventHorizonTransition
 
         //rb.velocity = targetVelocity;
 
-        transform.Translate(xVel , 0, zVel);
+        if(isGrounded)
+        {
+            rb.velocity = (rb.velocity.y* transform.up) + (transform.forward * zVel) + (transform.right * xVel);
+
+            //transform.Translate(xVel, 0, zVel);
+        }
+
+        else
+        {
+            rb.velocity = rb.velocity;
+        }
     }
 
     private void Rotate()
@@ -129,10 +141,15 @@ public class PlayerController : EventHorizonTransition
             {
                 reverseGravity *= -1;
             }
-            rb.AddForce(gravityDirection * jumpForce * reverseGravity);
+            rb.AddForce((gravityDirection * jumpForce * reverseGravity));
+            StartCoroutine(JumpForward(Time.deltaTime));
         }
     }
-
+    IEnumerator JumpForward(float time)
+    {
+        yield return new WaitForSeconds(time);
+        rb.AddForce((firstPersonCam.transform.forward * jumpForce/2));
+    }
     public override void Transition(Transform fromPortal, Transform toPortal,string endPortal, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
@@ -217,7 +234,7 @@ public class PlayerController : EventHorizonTransition
         {
             case "spaceStationBoundary":
                 gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-                jumpForce = 30000;
+                jumpForce = 25000;
                 //gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
                 float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position,transform.position)), 2) / 100000;
                 float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
