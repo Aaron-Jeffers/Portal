@@ -14,6 +14,8 @@ public class PlayerController : EventHorizonTransition
     public float strafeMultiplier;
     Rigidbody rb;
     public Vector3 xVelocity, yVelocity, zVelocity;
+    public Transform spaceStationSingularity;
+    public Vector3 gravityDirection;
 
     [SerializeField]
     [Header("Jump Variables", order = 1)]
@@ -21,7 +23,7 @@ public class PlayerController : EventHorizonTransition
     float earthGravity = -9.81f;
     float moonGravity = -1.62f;
     float venusGravity = -27.6f;
-    float spaceStationGravity = -9.81f;
+    float spaceStationGravity = -0.5f;
     float gravity;
     public float jumpForce;
 
@@ -64,20 +66,26 @@ public class PlayerController : EventHorizonTransition
 
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.up * gravity * rb.mass);
+        rb.AddForce(gravityDirection * gravity * rb.mass);
     }
     private void Movement()
     {
         float forwardSpeed = ((Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed) * worldSpeedMultiplier;
 
-        zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
-        xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
+        //zVelocity = Input.GetAxisRaw("Vertical") * forwardSpeed * transform.forward;
+        //xVelocity = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier * transform.right;
+
+        float zVel = Input.GetAxisRaw("Vertical") * forwardSpeed * Time.deltaTime;
+        float xVel = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier *Time.deltaTime;
         //yVelocity -= gravity * transform.up * Time.deltaTime;
 
-        yVelocity = new Vector3(0, rb.velocity.y, 0);
+        //yVelocity = new Vector3(0, rb.velocity.y, 0);           ///////undo
+        //yVelocity = rb.velocity.y * transform.up;
+        Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;
 
-        Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;     
-        rb.velocity = targetVelocity;        
+        //rb.velocity = targetVelocity;
+
+        transform.Translate(xVel , 0, zVel);
     }
 
     private void Rotate()
@@ -85,21 +93,28 @@ public class PlayerController : EventHorizonTransition
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        
+
         //yaw += mouseX;
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, pitchMin, pitchMax);
         yaw = mouseX;
 
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
-        transform.Rotate(Vector3.up * yaw);
+
+        /////////transform.Rotate(transform.up * yaw);
+
+        var myForward = Vector3.Cross(transform.right, gravityDirection);
+        var targetRot = Quaternion.LookRotation(myForward, gravityDirection);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 50f * Time.deltaTime);
+
+        transform.Rotate(0, yaw, 0);
     }
 
     private void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce);
+            rb.AddForce(gravityDirection * jumpForce);
         }
     }
 
@@ -174,22 +189,26 @@ public class PlayerController : EventHorizonTransition
     {
         switch (other.tag.ToString())
         {
-            case "portal":
-                //isGrounded = true;
-                //yVelocity = Vector3.zero;
-                break;
-            case "earthBoundary":                
-                gravity = earthGravity;
-                break;
-            case "moonBoundary":                
-                gravity = moonGravity;
-                break;
-            case "venusBoundary":               
-                gravity = venusGravity;
-                break;
             case "spaceStationBoundary":
+                gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
                 gravity = spaceStationGravity;
                 break;
+            case "portal":
+                gravityDirection = new Vector3(0, 1, 0);
+                break;
+            case "earthBoundary":
+                gravityDirection = new Vector3(0, 1, 0);
+                gravity = earthGravity;
+                break;
+            case "moonBoundary":
+                gravityDirection = new Vector3(0, 1, 0);
+                gravity = moonGravity;
+                break;
+            case "venusBoundary":
+                gravityDirection = new Vector3(0, 1, 0);
+                gravity = venusGravity;
+                break;
+            
             default:
                 break;
         }

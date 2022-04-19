@@ -60,7 +60,6 @@ public class Portal : MonoBehaviour
 
         if((index == 0) || index == 3)
         {
-            Debug.Log(index);
             return;           
         }
         else
