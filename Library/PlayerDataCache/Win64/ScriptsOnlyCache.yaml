@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AsteroidInitialise
     - FirstPersonCamera
     - Interactable
     - PlayerController
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - RotateEarth
     - RotateMoon
     - RotateWorldModels
+    - SmallAsteroidInitialise
     - SoundManager
     - Throwable
     - UI
@@ -64,39 +66,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1530}
+      Script: {instanceID: 8864}
     - Class: 114
-      Script: {instanceID: 2002}
+      Script: {instanceID: 9334}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 9982}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 10186}
     - Class: 114
-      Script: {instanceID: 3190}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 3750}
+      Script: {instanceID: 10480}
     - Class: 114
-      Script: {instanceID: 4096}
+      Script: {instanceID: 10506}
     - Class: 114
-      Script: {instanceID: 4144}
+      Script: {instanceID: 10946}
     - Class: 114
-      Script: {instanceID: 5000}
+      Script: {instanceID: 11054}
     - Class: 114
-      Script: {instanceID: 5146}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 5286}
+      Script: {instanceID: 11444}
     - Class: 114
-      Script: {instanceID: 5736}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 6686}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 6802}
+      Script: {instanceID: 12568}
     - Class: 114
-      Script: {instanceID: 6858}
+      Script: {instanceID: 12928}
     - Class: 114
-      Script: {instanceID: 25238}
+      Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 25914}
+      Script: {instanceID: 13966}
+    - Class: 114
+      Script: {instanceID: 14082}
+    - Class: 114
+      Script: {instanceID: 14138}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -324,6 +330,12 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 7c168cd48b43396bde045a9ee9cf29c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RotateMoon
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -334,6 +346,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 5bddb32bcb848f51c6efb9a0b86ba855
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RotateEarth
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -454,6 +472,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0e87c02e5ef259868828611112bb0119
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AsteroidInitialise
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -732,6 +756,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseUpAsButtonMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 0e87c02e5ef259868828611112bb0119
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SmallAsteroidInitialise
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -982,19 +1012,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RotateEarth
-  - hash:
-      serializedVersion: 2
-      Hash: beade7f32a78afa8fe66c996cc13a069
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RotateMoon
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/v_0.9.2/Portal.exe
+  playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/PC
+    Builds/v_1.0/Portal.exe
