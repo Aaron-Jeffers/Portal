@@ -116,7 +116,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &-2400777916548076671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15570fa8a62556046844d31803274eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceStationSingularity: {fileID: 0}
+  gravityDirection: {x: 0, y: 0, z: 0}
+  audioManager: {fileID: 0}
   environment: 
 --- !u!114 &8616554627348662424
 MonoBehaviour:

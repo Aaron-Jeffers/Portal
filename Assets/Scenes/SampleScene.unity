@@ -1816,6 +1816,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 306752685317224740, guid: 06f1628969a39b5489cd37dcde4ee258, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306752685317224740, guid: 06f1628969a39b5489cd37dcde4ee258, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 306752685332358229, guid: 06f1628969a39b5489cd37dcde4ee258, type: 3}
       propertyPath: m_Range
       value: 95.11

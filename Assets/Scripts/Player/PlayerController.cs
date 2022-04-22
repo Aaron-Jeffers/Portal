@@ -130,7 +130,15 @@ public class PlayerController : EventHorizonTransition
             {
                 reverseGravity *= -1;
             }
-            rb.AddForce((gravityDirection * jumpForce * reverseGravity));
+            if(!inSpace)
+            {
+                rb.AddForce((gravityDirection * jumpForce * reverseGravity));
+            }
+            else if(inSpace)
+            {
+                rb.transform.position += transform.up * 1;
+                rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            }
             StartCoroutine(JumpForward(0.01f));                     
         }
     }
@@ -140,6 +148,7 @@ public class PlayerController : EventHorizonTransition
         if(inSpace)
         {
             rb.AddForce((firstPersonCam.transform.forward * jumpForce * 15));
+            //StartCoroutine(ChangeDetection(0.5f));
         }
         else
         {
@@ -167,6 +176,7 @@ public class PlayerController : EventHorizonTransition
         {
             case "ground":
                 isGrounded = true;
+                rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
                 if(collision.collider.name == "Base1"  || collision.collider.name == "Base2" || collision.collider.name == "Base3")
                 {
                     jump = audioManager.metalJump;
