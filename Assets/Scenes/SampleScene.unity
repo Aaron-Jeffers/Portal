@@ -173,28 +173,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6bbb7670765d64b94d8d03654214bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4
+  walkSpeed: 3
+  sprintSpeed: 4.5
+  strafeMultiplier: 0.25
   earthSpeedMultiplier: 1
-  moonSpeedMultiplier: 0.5
+  moonSpeedMultiplier: 0.4
   venusSpeedMultiplier: 0.45
   spaceStationSpeedMultiplier: 0.4
-  sprintMultiplier: 1.3
-  strafeMultiplier: 0.25
-  xVelocity: {x: 0, y: 0, z: 0}
-  yVelocity: {x: 0, y: 0, z: 0}
-  zVelocity: {x: 0, y: 0, z: 0}
+  playerLocation: 
   spaceStationSingularity: {fileID: 1053353965}
-  gravityDirection: {x: 0, y: 0, z: 0}
   inSpace: 0
-  isGrounded: 0
   jumpForce: 15000
   spaceJumpForce: 5000
+  earthGravity: -9.81
+  moonGravity: -1.62
+  venusGravity: -27.6
+  spaceStationGravity: -15
+  spaceStationReverseGravity: 60
   cameraTransform: {fileID: 963194228}
   mouseSensitivity: 600
   pitchMin: -90
   pitchMax: 90
-  smoothTimeRot: 0.2
-  playerLocation: 
   audioManager: {fileID: 0}
 --- !u!54 &231990215
 Rigidbody:

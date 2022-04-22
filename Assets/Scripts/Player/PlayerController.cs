@@ -7,56 +7,49 @@ public class PlayerController : EventHorizonTransition
     [SerializeField]
     [Header("Movement Variables", order = 0)]
     public float walkSpeed;
-    public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier, spaceStationSpeedMultiplier;
-    float worldSpeedMultiplier;
-    public float sprintMultiplier;
-    float sprintSpeed;
+    public float sprintSpeed;
     public float strafeMultiplier;
+    public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier, spaceStationSpeedMultiplier;
+    float worldSpeedMultiplier;     
     Rigidbody rb;
-    public Vector3 xVelocity, yVelocity, zVelocity;
-    public Transform spaceStationSingularity;
-    public Vector3 gravityDirection;
-    bool gravityReversed;
-    Camera firstPersonCam;
-    public bool inSpace;
-    
-
-    [SerializeField]
-    [Header("Jump Variables", order = 1)]
-    public bool isGrounded;
-    float earthGravity = -9.81f;
-    float moonGravity = -1.62f;
-    float venusGravity = -27.6f;
-    float spaceStationGravity = -15f;
-    float spaceStationReverseGravity = 60f;
-    float gravity;
-    public float jumpForce, spaceJumpForce;
-
-    [SerializeField]
-    [Header("Camera Variables", order = 2)]
-    public Transform cameraTransform;
-    Camera playerCam;   
-    public float mouseSensitivity;
-    float pitch;
-    public float pitchMin, pitchMax;
-    public float smoothTimeRot;
-    float yaw;
     public string playerLocation = "earth";
 
-    //Audio
-    public SoundManager audioManager;
+    [SerializeField]
+    [Header("Gravity Variables", order = 1)]
+    public Transform spaceStationSingularity;
+    Vector3 gravityDirection;
+    bool gravityReversed; 
+    public bool inSpace;
+
+    [SerializeField]
+    [Header("Jump Variables", order = 2)]
+    public float jumpForce, spaceJumpForce;
+    public float earthGravity;
+    public float moonGravity;
+    public float venusGravity;
+    public float spaceStationGravity;
+    public float spaceStationReverseGravity;
+    float gravity;
+    bool isGrounded;   
+
+    [SerializeField]
+    [Header("Camera Variables", order = 3)]
+    public Transform cameraTransform;
+    Camera firstPersonCam;
+    public float mouseSensitivity; 
+    public float pitchMin, pitchMax;
+    float yaw, pitch;
+  
+
+    [SerializeField]
+    [Header("Audio Variables", order = 4)]
+    SoundManager audioManager;
     float audioLimit = 0.25f, audioTimer;
 
     private void Awake()
     {
         firstPersonCam = GetComponentInChildren<Camera>();
-        var temp = GameObject.FindGameObjectWithTag("AudioManager");
-        audioManager = temp.gameObject.GetComponent<SoundManager>();
-    }
-    private void Start()
-    {
-        playerCam = GetComponentInChildren<Camera>();
-        sprintSpeed = walkSpeed * sprintMultiplier;
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<SoundManager>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -75,10 +68,9 @@ public class PlayerController : EventHorizonTransition
     }
     private void Movement()
     {
-        float forwardSpeed = ((Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed) * worldSpeedMultiplier;
-        float zVel = Input.GetAxisRaw("Vertical") * forwardSpeed ;
-        float xVel = Input.GetAxisRaw("Horizontal") * forwardSpeed * strafeMultiplier ;
-        Vector3 targetVelocity = zVelocity + xVelocity + yVelocity;
+        float speed = ((Input.GetKey(KeyCode.LeftShift)) ? sprintSpeed : walkSpeed) * worldSpeedMultiplier;
+        float zVel = Input.GetAxisRaw("Vertical") * speed ;
+        float xVel = Input.GetAxisRaw("Horizontal") * speed * strafeMultiplier ;
         if(isGrounded)
         {
             rb.velocity = (rb.velocity.y* transform.up) + (transform.forward * zVel) + (transform.right * xVel);
@@ -94,17 +86,14 @@ public class PlayerController : EventHorizonTransition
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-
-        //yaw += mouseX;
+        yaw = mouseX;
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, pitchMin, pitchMax);
-        yaw = mouseX;
-
+       
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
 
-        /////////transform.Rotate(transform.up * yaw);
         var newgravDir = gravityDirection;
-        if(gravity > 3)
+        if (gravity > 3 )
         {
             gravityReversed = true;
             newgravDir *= -1;
@@ -125,36 +114,21 @@ public class PlayerController : EventHorizonTransition
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             var reverseGravity = 1;
-                   
+            rb.transform.position += transform.up * 0.1f;
             if (gravityReversed)
             {
                 reverseGravity *= -1;
             }
-            if(!inSpace)
+            if(playerLocation != "spaceStation")
             {
-                rb.AddForce((gravityDirection * jumpForce * reverseGravity));
+                rb.AddForce(jumpForce * ((gravityDirection * reverseGravity) + (firstPersonCam.transform.forward / 2)));
             }
-            else if(inSpace)
+            else if(playerLocation == "spaceStation")
             {
-                rb.transform.position += transform.up * 1;
+                rb.AddForce((firstPersonCam.transform.forward * jumpForce * 15));
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            }
-            StartCoroutine(JumpForward(0.01f));                     
+            }  
         }
-    }
-    IEnumerator JumpForward(float time)
-    {
-        yield return new WaitForSeconds(time);
-        if(inSpace)
-        {
-            rb.AddForce((firstPersonCam.transform.forward * jumpForce * 15));
-            //StartCoroutine(ChangeDetection(0.5f));
-        }
-        else
-        {
-            rb.AddForce((firstPersonCam.transform.forward * jumpForce / 2));
-        }
-        
     }
     public override void Transition(Transform fromPortal, Transform toPortal,string endPortal, Vector3 pos, Quaternion rot)
     {
@@ -164,70 +138,67 @@ public class PlayerController : EventHorizonTransition
         rb.velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.velocity));
         rb.angularVelocity = toPortal.TransformVector(fromPortal.InverseTransformVector(rb.angularVelocity));
         Physics.SyncTransforms();
-        playerCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
+        firstPersonCam.GetComponent<FirstPersonCamera>().SwitchSkybox(endPortal);
+    }
+
+    void HandleCollisionAudio(float magnitude, float dist, float volume, float pitch, AudioClip clip)
+    {
+        audioManager.PlayCollisionAudio(magnitude, dist, volume, pitch, clip);
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        AudioClip jump = audioManager.jump;
-        float jumpVolume = audioManager.jumpVolume;
-
-        switch (collision.collider.tag.ToString())
+    {      
+        if(collision.collider.CompareTag("ground"))
         {
-            case "ground":
-                isGrounded = true;
-                rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
-                if(collision.collider.name == "Base1"  || collision.collider.name == "Base2" || collision.collider.name == "Base3")
-                {
-                    jump = audioManager.metalJump;
-                    jumpVolume = audioManager.metalJumpVolume;
-                }
-                if(audioTimer < audioLimit)
-                {
-                    return;
-                }
-                if(!(collision.relativeVelocity.y < 2))
-                {
-                    switch (playerLocation)
+            isGrounded = true;
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
+            if(audioTimer < audioLimit || (collision.relativeVelocity.y < 2))
+            {
+                return;
+            }
+
+            switch (playerLocation)
+            {
+                case "earth":
+                    if (collision.collider.name == "Base1" || collision.collider.name == "Base2" || collision.collider.name == "Base3")
                     {
-                        case "earth":
-                            audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.earthPitch, jump);
-                            break;
-                        case "venus":
-                            audioManager.PlayCollisionAudio(1, 1, jumpVolume, audioManager.venusPitch, jump);
-                            break;
-                        case "moon":
-                            audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                            break;
-                        case "spaceStation":
-                            audioManager.PlayCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
-                            break;
-                        default:
-                            break;
+                        HandleCollisionAudio(1, 1, audioManager.metalJumpVolume, audioManager.earthPitch, audioManager.metalJump);
                     }
-                }
-                 break;
-        }
-    }
+                    else
+                    {
+                        HandleCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.earthPitch, audioManager.jump);
+                    }
+                    break;
+                case "venus":
+                    if (collision.collider.name == "Base1" || collision.collider.name == "Base2" || collision.collider.name == "Base3")
+                    {
+                        HandleCollisionAudio(1, 1, audioManager.metalJumpVolume, audioManager.venusPitch, audioManager.metalJump);
+                    }
+                    else
+                    {
+                        HandleCollisionAudio(1, 1, audioManager.jumpVolume, audioManager.venusPitch, audioManager.jump);
+                    }
+                    break;
+                case "moon":
+                    HandleCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                    break;
+                case "spaceStation":
+                    HandleCollisionAudio(1, 1, audioManager.moonJumpVolume, audioManager.moonPitch, audioManager.moonJump);
+                    break;
+                default:
+                    break;
+            }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        switch (collision.collider.tag.ToString())
-        {
-            case "ground":
-                isGrounded = true;
-                break;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        switch (collision.collider.tag.ToString())
+        if(collision.collider.CompareTag("ground"))
         {
-            case "ground":
-                audioTimer = 0;
-                isGrounded = false;
-                break;
+            audioTimer = 0;
+            isGrounded = false;
         }
     }
 

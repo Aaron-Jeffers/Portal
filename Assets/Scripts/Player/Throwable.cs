@@ -38,14 +38,12 @@ public class Throwable : EventHorizonTransition
         if (environment == "spaceStation")
         {
             gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-            Debug.Log(gravityDirection);
         }
 
         else
         {
             gravityDirection = Vector3.up;
         }
-        //gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
         rb.AddForce(gravityDirection * rb.mass * gravity);
         audioDelay += Time.deltaTime;        
     }
