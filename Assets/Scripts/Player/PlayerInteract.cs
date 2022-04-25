@@ -310,13 +310,17 @@ public class PlayerInteract : MonoBehaviour
         obj.transform.position = playerCam.transform.position + (playerCam.transform.forward * 0.75f) + (playerCam.transform.up * 0.5f);
         obj.transform.rotation = playerCam.transform.rotation;
 
-        Rigidbody rb = obj.GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        rb.AddForce(throwForce * playerCam.transform.forward);
-
+        Rigidbody rbObj = obj.GetComponent<Rigidbody>();
         float minSpin = 0f, maxSpin = 500f;
         Vector3 spin = new Vector3(Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin), Random.Range(minSpin, maxSpin));
-        rb.AddTorque(spin, ForceMode.Impulse);
+
+        rbObj.isKinematic = false;
+        rbObj.AddForce(throwForce * playerCam.transform.forward);     
+        rbObj.AddTorque(spin, ForceMode.Impulse);
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.AddForce(throwForce * -playerCam.transform.forward * (rb.mass/rbObj.mass));
+        
     }
 
     private void OnTriggerStay(Collider other)
