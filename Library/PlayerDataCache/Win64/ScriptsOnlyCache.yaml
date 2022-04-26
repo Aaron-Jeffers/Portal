@@ -180,7 +180,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 2caac4e82f057dea6881906922a005b3
+      Hash: 8563a0ec71a67d74bb9032489e234102
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1016,4 +1016,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   playerPath: C:/Users/aaron/Desktop/University/4. Fourth Year/Portfolio/Portal Builds/PC
-    Builds/v_1.1/Portal.exe
+    Builds/v_1.2/Portal.exe

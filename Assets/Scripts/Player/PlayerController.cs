@@ -23,7 +23,9 @@ public class PlayerController : EventHorizonTransition
 
     [SerializeField]
     [Header("Jump Variables", order = 2)]
-    public float jumpForce, spaceJumpForce;
+    public float regularJumpForce;
+    public float spaceJumpForce;
+    private float jumpForce;
     public float earthGravity;
     public float moonGravity;
     public float venusGravity;
@@ -204,44 +206,14 @@ public class PlayerController : EventHorizonTransition
 
     private void OnTriggerStay(Collider other)
     {
-        switch (other.tag.ToString())
+        if(other.CompareTag("spaceStationBoundary"))
         {
-            case "spaceStationBoundary":
-                gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-                jumpForce = spaceJumpForce;
-                //gravity = spaceStationGravity * (spaceStationSingularity.position-transform.position).sqrMagnitude / 100000;
-                float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position,transform.position)), 2) / 100000;
-                float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
-                //gravity += spaceStationReverseGravity * (spaceStationSingularity.position - transform.position).sqrMagnitude / 100000;
+            gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
 
-                gravity = regualar + reverse;                
-                //Debug.Log(gravity + " "+ regualar + " " + reverse);
-
-                break;
-            case "portal":
-                //gravityDirection = new Vector3(0, 1, 0);               
-                jumpForce = 15000;
-                break;
-            case "earthBoundary":
-                gravityDirection = new Vector3(0, 1, 0);
-                jumpForce = 15000;
-                gravity = earthGravity;
-                break;
-            case "moonBoundary":
-                gravityDirection = new Vector3(0, 1, 0);
-                jumpForce = 15000;
-                gravity = moonGravity;
-                break;
-            case "venusBoundary":
-                gravityDirection = new Vector3(0, 1, 0);
-                jumpForce = 15000;
-                gravity = venusGravity;
-                break;
-            
-            default:
-                break;
+            float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position)), 2) / 100000;
+            float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
+            gravity = regualar + reverse;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -249,28 +221,41 @@ public class PlayerController : EventHorizonTransition
         switch (other.tag.ToString())
         {
             case "earthBoundary":
+                gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = regularJumpForce;
+                gravity = earthGravity;
                 audioManager.PlayAmbientAudio(audioManager.earthAmbient, audioManager.ambientEarthVolume);
                 playerLocation = "earth";
                 worldSpeedMultiplier = earthSpeedMultiplier;
                 inSpace = false;
                 break;
             case "moonBoundary":
+                gravity = moonGravity;
+                gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = regularJumpForce;
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "moon";
                 worldSpeedMultiplier = moonSpeedMultiplier;
                 inSpace = false;               
                 break;
             case "venusBoundary":
+                gravityDirection = new Vector3(0, 1, 0);
+                jumpForce = regularJumpForce;
+                gravity = venusGravity;
                 audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);
                 playerLocation = "venus";
                 worldSpeedMultiplier = venusSpeedMultiplier;
                 inSpace = false;
                 break;
             case "spaceStationBoundary":
+                jumpForce = spaceJumpForce;
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "spaceStation";
                 worldSpeedMultiplier = spaceStationSpeedMultiplier;
                 inSpace = true;
+                break;
+            case "portal":             
+                jumpForce = regularJumpForce;
                 break;
             default:
                 break;
