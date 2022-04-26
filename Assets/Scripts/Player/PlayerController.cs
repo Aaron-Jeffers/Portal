@@ -17,7 +17,17 @@ public class PlayerController : EventHorizonTransition
     [SerializeField]
     [Header("Gravity Variables", order = 1)]
     public Transform spaceStationSingularity;
-    Vector3 gravityDirection;
+    public Transform earthSingularity;
+    public Transform moonSingularity;
+    public float earthGravity;
+    public float moonGravity;
+    public float venusGravity;
+    public float spaceStationGravityToEdge;
+    public float spaceStationGravityToCore;
+    public float spaceStationGravityToEarth;
+    public float spaceStationGravityToMoon;
+    //float gravity;
+    //Vector3 gravityDirection;
     bool gravityReversed; 
     public bool inSpace;
 
@@ -26,12 +36,7 @@ public class PlayerController : EventHorizonTransition
     public float regularJumpForce;
     public float spaceJumpForce;
     private float jumpForce;
-    public float earthGravity;
-    public float moonGravity;
-    public float venusGravity;
-    public float spaceStationGravity;
-    public float spaceStationReverseGravity;
-    float gravity;
+    
     bool isGrounded;   
 
     [SerializeField]
@@ -56,17 +61,83 @@ public class PlayerController : EventHorizonTransition
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        rb.AddForce(CalculateGravity()[0]);
         Movement();
         Rotate();
         Jump();
-        audioTimer += Time.deltaTime;       
+        audioTimer += Time.deltaTime;
     }
 
-    private void FixedUpdate()
+    private Vector3[] CalculateGravity()
     {
-        rb.AddForce(gravityDirection * gravity * rb.mass);
+        Vector3[] gravity_gravityDirection;
+        Vector3 gravity;
+        Vector3 gravityDirection = Vector3.up;
+
+        switch (playerLocation)
+        {
+            case "earth":
+                gravityDirection = Vector3.up;
+                gravity = gravityDirection * earthGravity * rb.mass;              
+                break;
+            case "venus":
+                gravityDirection = Vector3.up;
+                gravity = gravityDirection * venusGravity * rb.mass;
+                
+                break;
+            case "moon":
+                gravityDirection = Vector3.up;
+                gravity = gravityDirection * moonGravity * rb.mass;
+                break;
+            case "spaceStation":                              
+                Vector3 gravityDirectionToCore = (spaceStationSingularity.position - transform.position).normalized;
+                Vector3 gravityDirectionToEdge = (transform.position - spaceStationSingularity.position).normalized;
+
+               
+                //Vector3 gravityDirectionToEarth = (earthSingularity.position - transform.position).normalized;
+                //Vector3 gravityDirectionToMoon = (moonSingularity.position - transform.position).normalized;
+
+                float distanceSmooth = 100000;
+
+                float gravityToEdge = spaceStationGravityToEdge * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position)), 2) / distanceSmooth;
+                float gravityToCore = spaceStationGravityToCore * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / distanceSmooth);
+
+                //Debug.Log("core: " + gravityToCore + "edge: " + gravityToEdge);
+                //float gravityToEarth = spaceStationGravityToEarth * Mathf.Pow((Vector3.Distance(earthSingularity.position, transform.position)), 2 - 3500) / distanceSmooth;
+                //float gravityToMoon = spaceStationGravityToMoon * Mathf.Pow((Vector3.Distance(moonSingularity.position, transform.position)) - 1800, 2) / distanceSmooth; ;
+
+                Vector3 gravityForce = (gravityDirectionToEdge * gravityToEdge) + (gravityDirectionToCore * gravityToCore);
+
+                float[] gravityStrengths = { gravityToEdge, gravityToCore};
+                Vector3[] gravityDirections = { gravityDirectionToEdge, gravityDirectionToCore};
+
+                float max = 0;
+
+                for (int i = 0; i < gravityStrengths.Length; i++)
+                {
+                    if(Mathf.Sqrt(Mathf.Pow(gravityStrengths[i], 2)) > max)
+                    {
+                        gravityDirection = gravityDirections[i] * -1;
+                        max = gravityStrengths[i];
+                    }
+                }
+
+                gravity = gravityForce * rb.mass;
+                break;
+            case "adrift":
+                gravity = Vector3.zero;
+                gravityDirection = transform.up;
+                break;
+            default:
+                gravityDirection = Vector3.up;
+                gravity = gravityDirection * earthGravity * rb.mass;
+                break;
+        }
+        gravity_gravityDirection = new[] {gravity, gravityDirection};
+
+        return gravity_gravityDirection;
     }
     private void Movement()
     {
@@ -94,36 +165,24 @@ public class PlayerController : EventHorizonTransition
        
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
 
-        var newgravDir = gravityDirection;
-        if (gravity > 3 )
-        {
-            gravityReversed = true;
-            newgravDir *= -1;
-        }
-        else if (gravity < -1)
-        {
-            gravityReversed = false;
-        }
-        var myForward = Vector3.Cross(transform.right, newgravDir);
-        var targetRot = Quaternion.LookRotation(myForward, newgravDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);
-
+        
+        var myForward = Vector3.Cross(transform.right, CalculateGravity()[1]);
+        var targetRot = Quaternion.LookRotation(myForward, CalculateGravity()[1]);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);           
+        
         transform.Rotate(0, yaw, 0);
+
     }   
 
     private void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            var reverseGravity = 1;
             rb.transform.position += transform.up * 0.1f;
-            if (gravityReversed)
-            {
-                reverseGravity *= -1;
-            }
+    
             if(playerLocation != "spaceStation")
             {
-                rb.AddForce(jumpForce * ((gravityDirection * reverseGravity) + (firstPersonCam.transform.forward / 2)));
+                rb.AddForce(jumpForce * (Vector3.up + (firstPersonCam.transform.forward / 2)));
             }
             else if(playerLocation == "spaceStation")
             {
@@ -195,6 +254,14 @@ public class PlayerController : EventHorizonTransition
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if(collision.collider.CompareTag("ground"))
@@ -204,34 +271,18 @@ public class PlayerController : EventHorizonTransition
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.CompareTag("spaceStationBoundary"))
-        {
-            gravityDirection = (spaceStationSingularity.position - transform.position).normalized;
-
-            float regualar = spaceStationGravity * Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position)), 2) / 100000;
-            float reverse = spaceStationReverseGravity * (Mathf.Pow((Vector3.Distance(spaceStationSingularity.position, transform.position) - 100), 2) / 100000);
-            gravity = regualar + reverse;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag.ToString())
         {
             case "earthBoundary":
-                gravityDirection = new Vector3(0, 1, 0);
                 jumpForce = regularJumpForce;
-                gravity = earthGravity;
                 audioManager.PlayAmbientAudio(audioManager.earthAmbient, audioManager.ambientEarthVolume);
                 playerLocation = "earth";
                 worldSpeedMultiplier = earthSpeedMultiplier;
                 inSpace = false;
                 break;
             case "moonBoundary":
-                gravity = moonGravity;
-                gravityDirection = new Vector3(0, 1, 0);
                 jumpForce = regularJumpForce;
                 audioManager.PlayAmbientAudio(audioManager.moonAmbient, audioManager.ambientMoonVolume);
                 playerLocation = "moon";
@@ -239,9 +290,7 @@ public class PlayerController : EventHorizonTransition
                 inSpace = false;               
                 break;
             case "venusBoundary":
-                gravityDirection = new Vector3(0, 1, 0);
                 jumpForce = regularJumpForce;
-                gravity = venusGravity;
                 audioManager.PlayAmbientAudio(audioManager.venusAmbient, audioManager.ambientVenusVolume);
                 playerLocation = "venus";
                 worldSpeedMultiplier = venusSpeedMultiplier;
@@ -256,6 +305,20 @@ public class PlayerController : EventHorizonTransition
                 break;
             case "portal":             
                 jumpForce = regularJumpForce;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.tag.ToString())
+        {
+            case "innerSpaceStation":
+                playerLocation = "adrift";
+                rb.freezeRotation = false;
+                rb.angularVelocity = rb.angularVelocity;
                 break;
             default:
                 break;

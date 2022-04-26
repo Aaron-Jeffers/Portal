@@ -20,6 +20,7 @@ TagManager:
   - spaceStationBoundary
   - singularity
   - rotationCentre
+  - innerSpaceStation
   layers:
   - Default
   - TransparentFX
