@@ -10,9 +10,10 @@ public class PlayerController : EventHorizonTransition
     public float sprintSpeed;
     public float strafeMultiplier;
     public float earthSpeedMultiplier, moonSpeedMultiplier, venusSpeedMultiplier, spaceStationSpeedMultiplier;
-    float worldSpeedMultiplier;     
+    float worldSpeedMultiplier;
     Rigidbody rb;
     public string playerLocation = "earth";
+    private Vector3 lastVelocity = Vector3.zero;
 
     [SerializeField]
     [Header("Gravity Variables", order = 1)]
@@ -28,7 +29,7 @@ public class PlayerController : EventHorizonTransition
     public float spaceStationGravityToMoon;
     //float gravity;
     //Vector3 gravityDirection;
-    bool gravityReversed; 
+    bool gravityReversed;
     public bool inSpace;
 
     [SerializeField]
@@ -36,17 +37,17 @@ public class PlayerController : EventHorizonTransition
     public float regularJumpForce;
     public float spaceJumpForce;
     private float jumpForce;
-    
-    bool isGrounded;   
+
+    bool isGrounded;
 
     [SerializeField]
     [Header("Camera Variables", order = 3)]
     public Transform cameraTransform;
     Camera firstPersonCam;
-    public float mouseSensitivity; 
+    public float mouseSensitivity;
     public float pitchMin, pitchMax;
     float yaw, pitch;
-  
+
 
     [SerializeField]
     [Header("Audio Variables", order = 4)]
@@ -61,13 +62,29 @@ public class PlayerController : EventHorizonTransition
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.AddForce(CalculateGravity()[0]);
         Movement();
         Rotate();
         Jump();
+        
+
+    }
+    private void FixedUpdate()
+    {
+        rb.AddForce(CalculateGravity()[0]);
         audioTimer += Time.deltaTime;
+        //Debug.Log(CalculateAcceleration());
+    }
+
+    float CalculateAcceleration()
+    {
+        Vector3 acceleration = (rb.velocity - lastVelocity) / Time.deltaTime;
+
+        lastVelocity = rb.velocity;
+        float accelerationMagnitude = acceleration.magnitude;
+
+        return accelerationMagnitude; 
     }
 
     private Vector3[] CalculateGravity()
@@ -168,10 +185,8 @@ public class PlayerController : EventHorizonTransition
         
         var myForward = Vector3.Cross(transform.right, CalculateGravity()[1]);
         var targetRot = Quaternion.LookRotation(myForward, CalculateGravity()[1]);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);           
-        
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 1f * Time.deltaTime);      
         transform.Rotate(0, yaw, 0);
-
     }   
 
     private void Jump()
@@ -305,6 +320,27 @@ public class PlayerController : EventHorizonTransition
                 break;
             case "portal":             
                 jumpForce = regularJumpForce;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        switch (other.tag.ToString())
+        {
+            case "earthBoundary":
+                playerLocation = "earth";
+                break;
+            case "moonBoundary":
+                playerLocation = "moon";
+                break;
+            case "venusBoundary":
+                playerLocation = "venus";
+                break;
+            case "spaceStationBoundary":
+                playerLocation = "spaceStation";
                 break;
             default:
                 break;

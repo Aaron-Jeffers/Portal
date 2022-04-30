@@ -832,9 +832,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6987238514875754024}
     m_Modifications:
+    - target: {fileID: 655066864634416637, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: far clip plane
+      value: 25000
+      objectReference: {fileID: 0}
     - target: {fileID: 3007796450497682543, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_TagString
       value: portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732475362377703923, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: far clip plane
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: 4732475362524454840, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_RootOrder
@@ -883,6 +891,10 @@ PrefabInstance:
     - target: {fileID: 4732475362524454847, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_Name
       value: Portals
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732475362876544531, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
+      propertyPath: far clip plane
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: 4732475363065494496, guid: 6fd4f31465210244fb10dc996fe563c7, type: 3}
       propertyPath: m_Name

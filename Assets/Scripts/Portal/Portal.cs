@@ -73,13 +73,6 @@ public class Portal : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        if(worldSpace == "spaceStation")
-        {
-            //transform.RotateAround(rotationCentre.position, rotationCentre.up, 0.00001f * Time.realtimeSinceStartup);
-        }
-    }
     private void LateUpdate()
     {
         Transitions();       

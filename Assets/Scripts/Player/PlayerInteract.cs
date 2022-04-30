@@ -62,8 +62,8 @@ public class PlayerInteract : MonoBehaviour
                     break;
                 case "button":
                     UpdatePortalAddress(obj.gameObject);
-                    audioManager.metalJumpVolume = 0;
-                    audioManager.jumpVolume = 0;
+                    //audioManager.metalJumpVolume = 0;
+                    //audioManager.jumpVolume = 0;
 
                     if(playerLocation == "moon" || playerLocation == "spaceStation")
                     {

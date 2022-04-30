@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8960100
-      m_LastClickedID: 104184
-      m_ExpandedIDs: 8ebbffffcebbffff04bdffffa0c0ffffe0c0fffffac1ffff54fbfffff8960100589a010046b50100f4bf0100
+      m_SelectedIDs: aa520000
+      m_LastClickedID: 21162
+      m_ExpandedIDs: 54fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -481,9 +481,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 24109.354, y: -7338.758, z: -48.66224}
+    m_Target: {x: 38338.24, y: -9344.125, z: 16223.012}
     speed: 2
-    m_Value: {x: 24109.354, y: -7338.758, z: -48.66224}
+    m_Value: {x: 38338.24, y: -9344.125, z: 16223.012}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -530,13 +530,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2233307, y: -0.67712265, z: 0.22808158, w: -0.6630396}
+    m_Target: {x: -0.14443778, y: 0.5777797, z: -0.10477624, w: -0.7964599}
     speed: 2
-    m_Value: {x: -0.22332911, y: -0.6771178, z: 0.22807996, w: -0.66303486}
+    m_Value: {x: -0.14443646, y: 0.57777447, z: -0.104775295, w: -0.7964527}
   m_Size:
-    m_Target: 12.124355
+    m_Target: 46093.39
     speed: 2
-    m_Value: 12.124355
+    m_Value: 46093.39
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -664,8 +664,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 789b0000
-    m_LastClickedID: 39800
+    m_SelectedIDs: 769b0000
+    m_LastClickedID: 39798
     m_ExpandedIDs: 00000000609b0000729b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f8960100
-    m_LastClickedInstanceID: 104184
+    m_SelectedInstanceIDs: 9a0b0000
+    m_LastClickedInstanceID: 2970
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000de96010000000000
     m_RenameOverlay:
