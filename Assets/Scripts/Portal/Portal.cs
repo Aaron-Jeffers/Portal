@@ -17,15 +17,16 @@ public class Portal : MonoBehaviour
     List<EventHorizonTransition> transitionObjects;
     public List<GameObject> worldModels;
 
-    Transform rotationCentre;
+    //Transform rotationCentre;
     string worldSpace;
     
 
     int index;
     private void Awake()
     {
-        rotationCentre = GameObject.FindGameObjectWithTag("rotationCentre").transform;
+        //rotationCentre = GameObject.FindGameObjectWithTag("rotationCentre").transform;
         firstPersonCamera = Camera.main;
+        //firstPersonCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         portalCamera = GetComponentInChildren<Camera>();
         portalCamera.enabled = false;
         transitionObjects = new List<EventHorizonTransition>();

@@ -10,6 +10,6 @@ public class RotateMoon : MonoBehaviour
     {
         //var rot = System.Math.Round(rotateSpeed * Time.realtimeSinceStartup, 6);
         //transform.rotation = Quaternion.Euler(0, rotateSpeed * Time.realtimeSinceStartup, 0);
-        transform.RotateAround(rotationCentre.position, rotationCentre.up , rotateSpeed * Time.deltaTime);
+        //transform.RotateAround(rotationCentre.position, rotationCentre.up , rotateSpeed * Time.deltaTime);
     }
 }

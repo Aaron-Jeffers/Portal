@@ -143,10 +143,6 @@ public class PlayerController : EventHorizonTransition
 
                 gravity = gravityForce * rb.mass;
                 break;
-            case "adrift":
-                gravity = Vector3.zero;
-                gravityDirection = transform.up;
-                break;
             default:
                 gravityDirection = Vector3.up;
                 gravity = gravityDirection * earthGravity * rb.mass;
@@ -347,17 +343,5 @@ public class PlayerController : EventHorizonTransition
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        switch (other.tag.ToString())
-        {
-            case "innerSpaceStation":
-                playerLocation = "adrift";
-                //rb.freezeRotation = false;
-                //rb.angularVelocity = rb.angularVelocity;
-                break;
-            default:
-                break;
-        }
-    }
+   
 }
