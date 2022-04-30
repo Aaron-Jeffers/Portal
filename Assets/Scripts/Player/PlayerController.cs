@@ -353,8 +353,8 @@ public class PlayerController : EventHorizonTransition
         {
             case "innerSpaceStation":
                 playerLocation = "adrift";
-                rb.freezeRotation = false;
-                rb.angularVelocity = rb.angularVelocity;
+                //rb.freezeRotation = false;
+                //rb.angularVelocity = rb.angularVelocity;
                 break;
             default:
                 break;
